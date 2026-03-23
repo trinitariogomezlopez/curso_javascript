@@ -1,0 +1,67 @@
+site_name: Curso JavaScript
+site_url: ""
+theme:
+  name: material
+  language: es
+  features:
+    #- navigation.expand
+    #- navigation.sections
+    #- navigation.collapse
+    #- navigation.tabs
+    - navigation.top
+    - toc.follow
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Canvio modo oscuro
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Canvio modo claro
+nav:
+  - UD 01. Navegadores y entorno de trabajo: 
+    - 1. Navegadores: ud01/ud11.md
+    - 2. Consola web: ud01/ud12.md
+    - 3. Entorno de desarrollo: ud01/ud13.md
+  - UD 02. Sinstaxis Javascript ES6: 
+    - 1. Evolución de JavaScript: ud02/ud21.md
+    - 2. Integración de código JavaScript: ud02/ud22.md
+    - 3. La consola JavaScript: ud02/ud23.md
+    - 4. Comentarios: ud02/ud24.md
+    - 5. Variables y constantes: ud02/ud25.md
+    - 6. Entrada y salida en navegadores: ud02/ud26.md
+    - 7. Operadores: ud02/ud27.md
+    - 8. Estructuras de control: ud02/ud28.md
+    - 9. Funciones: ud02/ud29.md
+  - UD 03. Objetos predefinidos:
+    - 1. Funciones predefinidas: ud03/ud31.md
+    - 2. Objeto predefinido String: ud03/ud32.md
+    - 3. Objeto predefinido Date: ud03/ud33.md
+    - 4. Objeto predefinido Array: ud03/ud34.md
+    - 5. Objeto predefinido Math: ud03/ud35.md
+  - UD 04. Document Object Model (DOM):
+    - 1. Introducción: ud04/ud41.md
+    - 2. Tipos de nodo: ud04/ud42.md
+    - 3. Buscar nodos en el DOM: ud04/ud43.md
+    - 4. Modificar nodos en el DOM : ud04/ud44.md
+    - 5. Creación de nodos : ud04/ud45.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      linenums: true
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+  - attr_list
+
