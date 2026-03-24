@@ -1,0 +1,21 @@
+@media print {
+  details,
+  details[open] {
+    display: block !important;
+  }
+
+  details > * {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Ocultar la flecha toggle en el PDF */
+  details > summary::marker,
+  details > summary::-webkit-details-marker {
+    display: none !important;
+  }
+}

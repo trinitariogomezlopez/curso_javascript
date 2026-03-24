@@ -23,6 +23,7 @@ theme:
         icon: material/brightness-4
         name: Canvio modo claro
 nav:
+  - Home: index.md
   - UD 01. Navegadores y entorno de trabajo: 
     - 1. Navegadores: ud01/ud11.md
     - 2. Consola web: ud01/ud12.md
@@ -65,3 +66,21 @@ markdown_extensions:
       permalink: true
   - attr_list
 
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - javascripts/pdf_expand.js
+
+plugins:
+  - search
+  - page-to-pdf:              # debe ir el ÚLTIMO
+      disableOnServe: false
+      printBackground: true
+      displayHeaderFooter: false
+      scale: 1.0
+      margin:
+        top: "40px"
+        bottom: "40px"
+        left: "20px"
+        right: "20px"
