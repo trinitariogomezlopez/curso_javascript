@@ -2,6 +2,9 @@ site_name: Curso JavaScript
 site_url: ""
 theme:
   name: material
+  font:
+    text: 'Roboto, sans-serif'
+    code: 'Courier New, monospace'
   language: es
   features:
     #- navigation.expand
@@ -75,7 +78,7 @@ extra_javascript:
 plugins:
   - search
   - page-to-pdf:              # debe ir el ÚLTIMO
-      disableOnServe: false
+      disableOnServe: true
       printBackground: true
       displayHeaderFooter: false
       scale: 1.0
