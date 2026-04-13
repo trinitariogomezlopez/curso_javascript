@@ -50,9 +50,9 @@ nav:
   - UD 04. Document Object Model (DOM):
     - 1. Introducción: ud04/ud41.md
     - 2. Tipos de nodo: ud04/ud42.md
-    - 3. Buscar nodos en el DOM: ud04/ud43.md
-    - 4. Modificar nodos en el DOM : ud04/ud44.md
-    - 5. Creación de nodos : ud04/ud45.md
+    - 3. Buscar nodos: ud04/ud43.md
+    - 4. Creación de nodos : ud04/ud44.md
+    - 5. Modificación de nodos : ud04/ud45.md
 
 markdown_extensions:
   - admonition
