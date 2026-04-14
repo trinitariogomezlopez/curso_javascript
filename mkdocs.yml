@@ -26,7 +26,7 @@ theme:
         icon: material/brightness-4
         name: Canvio modo claro
 nav:
-  - Home: index.md
+  - Inicio: index.md
   - UD 01. Navegadores y entorno de trabajo: 
     - 1. Navegadores: ud01/ud11.md
     - 2. Consola web: ud01/ud12.md
