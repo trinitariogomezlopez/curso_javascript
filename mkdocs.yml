@@ -53,6 +53,11 @@ nav:
     - 3. Buscar nodos: ud04/ud43.md
     - 4. Creación de nodos : ud04/ud44.md
     - 5. Modificación de nodos : ud04/ud45.md
+  - UD 05. Eventos:
+    - 1. Introducción: ud05/ud51.md
+    - 2. Eventos y Manejadores: ud05/ud52.md
+    - 3. Tipos de eventos: ud05/ud53.md
+    - 4. Asignación de manejadores: ud05/ud54.md
 
 markdown_extensions:
   - admonition
