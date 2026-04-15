@@ -58,6 +58,7 @@ nav:
     - 2. Eventos y Manejadores: ud05/ud52.md
     - 3. Tipos de eventos: ud05/ud53.md
     - 4. Asignación de manejadores: ud05/ud54.md
+    - 5. Ejercicios: ud05/ud55.md
 
 markdown_extensions:
   - admonition
