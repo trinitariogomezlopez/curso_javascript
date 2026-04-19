@@ -79,7 +79,7 @@ extra_css:
   - css/extra.css
 
 extra_javascript:
-  - javascripts/pdf_expand.js
+  - js/pdf_expand.js
 
 plugins:
   - search
