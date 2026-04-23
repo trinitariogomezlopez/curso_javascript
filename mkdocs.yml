@@ -59,6 +59,13 @@ nav:
     - 3. Tipos de eventos: ud05/ud53.md
     - 4. Asignación de manejadores: ud05/ud54.md
     - 5. Ejercicios: ud05/ud55.md
+  - UD 06. Formularios:
+    - 1. Introducción: ud06/ud61.md
+    - 2. Formas de selección del objeto form con JavaScript: ud06/ud62.md
+    - 3. Formas de seleccionar los hijos de form con JavaScript: ud06/ud63.md
+    - 4. Validación de formularios por JavaScript: ud06/ud64.md
+    - 5. Enviar formulario por JavaScript: ud06/ud65.md
+    - 6. Eventos en formularios: ud06/ud66.md
 
 markdown_extensions:
   - admonition
