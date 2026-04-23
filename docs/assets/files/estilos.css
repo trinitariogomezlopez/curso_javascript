@@ -1,0 +1,545 @@
+/* ===== RESET Y VARIABLES ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --negro: #1a1a1a;
+  --blanco: #f5f0e8;
+  --dorado: #c8a96e;
+  --gris: #6b6b6b;
+  --claro: #ede8dc;
+  --oscuro: #2c2c2c;
+}
+
+body {
+  background: var(--blanco);
+  color: var(--negro);
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: var(--blanco);
+  border-bottom: 1px solid var(--dorado);
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+  color: var(--negro);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--gris);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+/* ===== HERO / CARRUSEL ===== */
+.hero {
+  margin-top: 72px;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.carrusel {
+  display: flex;
+  height: 100%;
+  transition: transform 0.7s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+.slide:nth-child(1) {
+  background: #1a1a1a;
+}
+.slide:nth-child(2) {
+  background: #2c3e50;
+}
+.slide:nth-child(3) {
+  background: #3d2b1f;
+}
+
+.slide h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--blanco);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.slide p {
+  color: var(--dorado);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.btn-hero {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--dorado);
+  color: var(--dorado);
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+/* Flechas del carrusel */
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(200, 169, 110, 0.15);
+  border: 1px solid var(--dorado);
+  color: var(--dorado);
+  width: 50px;
+  height: 50px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+#flechaIzq {
+  left: 1.5rem;
+}
+#flechaDer {
+  right: 1.5rem;
+}
+
+/* Puntos del carrusel */
+.puntos {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(200, 169, 110, 0.4);
+  border: 1px solid var(--dorado);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.punto.activo {
+  background: var(--dorado);
+}
+
+/* ===== SECCIÓN SERVICIOS ===== */
+.servicios {
+  padding: 6rem 3rem;
+  background: var(--claro);
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.titulo-seccion h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--negro);
+  margin-bottom: 0.5rem;
+}
+
+.titulo-seccion span {
+  color: var(--dorado);
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.tarjeta .icono {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.tarjeta h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--negro);
+}
+
+.tarjeta p {
+  font-size: 0.9rem;
+  color: var(--gris);
+  line-height: 1.7;
+}
+
+/* ===== BOTONES DE EJEMPLO ===== */
+.botones-seccion {
+  padding: 5rem 3rem;
+  background: var(--negro);
+  text-align: center;
+}
+
+.botones-seccion h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--blanco);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.botones-seccion .subtitulo {
+  color: var(--dorado);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.fila-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 1rem 2.2rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-primario {
+  background: var(--dorado);
+  color: var(--negro);
+  border: none;
+  transition: opacity 0.3s;
+}
+
+.btn-secundario {
+  background: transparent;
+  color: var(--blanco);
+  border: 1px solid var(--blanco);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.btn-peligro {
+  background: transparent;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+/* Mensaje de feedback de botones */
+#mensaje-btn {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: var(--dorado);
+  height: 1.5rem;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+/* ===== FORMULARIO ===== */
+.contacto {
+  padding: 6rem 3rem;
+  background: var(--claro);
+  text-align: center;
+}
+
+.contacto h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contacto .subtitulo {
+  color: var(--dorado);
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.formulario {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 1rem 1.2rem;
+  background: var(--blanco);
+  border: 1px solid #ccc;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: var(--negro);
+  outline: none;
+  transition: border-color 0.3s;
+  resize: vertical;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: var(--dorado);
+}
+
+.btn-enviar {
+  align-self: flex-start;
+  padding: 1rem 2.5rem;
+  background: var(--negro);
+  color: var(--blanco);
+  border: none;
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--oscuro);
+  color: var(--gris);
+  text-align: center;
+  padding: 2.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+footer span {
+  color: var(--dorado);
+}
+
+/* ===== TOOLTIP (para las tarjetas) ===== */
+.tooltip {
+  position: fixed;
+  background: var(--negro);
+  color: var(--dorado);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 999;
+  border: 1px solid var(--dorado);
+}
+
+.resalto {
+  color: var(--dorado);
+  border-bottom: 2px solid var(--dorado);
+  font-weight: 700;
+}
+
+.seleccionado {
+  background: var(--blanco);
+  color: var(--dorado);
+  outline: 2px solid var(--dorado);
+  outline-offset: 3px;
+  font-weight: 700;
+}
+
+/* ===== SECCIÓN DESPLEGABLES (FAQ) ===== */
+.faq {
+  padding: 6rem 3rem;
+  background: var(--blanco);
+}
+
+.faq .titulo-seccion h2 {
+  color: var(--negro);
+}
+
+.faq .titulo-seccion span {
+  color: var(--dorado);
+}
+
+.lista-faq {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Cada ítem desplegable */
+.faq-item {
+  border: 1px solid rgba(200, 169, 110, 0.3);
+  transition: border-color 0.3s;
+}
+
+/* ── Cabecera del desplegable (el botón que se pulsa) ── */
+.faq-cabecera {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.8rem;
+  background: var(--negro);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: var(--dorado);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.hover {
+  background: rgba(200, 169, 110, 0.08);
+}
+
+/* Flecha indicadora */
+.faq-flecha {
+  font-size: 1.2rem;
+  color: var(--dorado);
+  transition: transform 0.35s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* ── Contenido oculto por defecto ── */
+.faq-contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    padding 0.3s ease;
+  padding: 0 1.8rem;
+}
+
+.faq-contenido p {
+  font-size: 0.92rem;
+  color: #aaa;
+  line-height: 1.8;
+  padding-bottom: 1.4rem;
+}
+
+/* ── Estado ABIERTO: se añade con classList.toggle ──
+       Cuando el ítem tiene la clase "abierto":
+         · la flecha rota 45°
+         · el contenido se expande (max-height grande)
+         · el borde se ilumina en dorado               */
+#lista.abierto {
+  border-color: var(--dorado);
+}
+
+#lista.abierto .faq-flecha {
+  transform: rotate(45deg);
+}
+
+#lista.abierto .faq-contenido {
+  max-height: 300px;
+  padding: 0.2rem 1.8rem 0;
+}
+
+#lista.abierto .faq-cabecera {
+  color: var(--dorado);
+}
+
+.btn-primario-efecto {
+  background: var(--blanco);
+  color: var(--dorado);
+  outline: 2px solid var(--dorado);
+  outline-offset: 3px;
+  font-weight: 700;
+}
+
+.btn-secundario.seleccionado {
+  background: var(--blanco);
+  color: var(--negro);
+  border-color: var(--blanco);
+  outline: 2px solid var(--blanco);
+  outline-offset: 3px;
+  font-weight: 700;
+}
+
+.btn-peligro.seleccionado {
+  background: #e74c3c;
+  color: var(--blanco);
+  outline: 2px solid #e74c3c;
+  outline-offset: 3px;
+  font-weight: 700;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lemmon Studio — Ejercicio Eventos JS</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- TOOLTIP GLOBAL -->
+    <div class="tooltip" id="tooltip">Ver más</div>
+
+    <!-- ============================
+        SECCIÓN 1: NAVEGACIÓN
+        ============================ -->
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="logo">Lemmon</div>
+        <ul class="nav-links">
+            <li><a href="#" class="menu">Inicio</a></li>
+            <li><a href="#" class="menu">Proyectos</a></li>
+            <li><a href="#" class="menu">Servicios</a></li>
+            <li><a href="#" class="menu">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================
+        SECCIÓN 2: CARRUSEL
+        ============================ -->
+    <section class="hero">
+        <div class="carrusel" id="carrusel">
+            <div class="slide">
+                <p>Bienvenido al estudio</p>
+                <h1>Diseño que<br />cuenta historias</h1>
+                <button class="btn-hero" id="btnSlide1">Descubrir</button>
+            </div>
+            <div class="slide">
+                <p>Nuestra pasión</p>
+                <h1>Creatividad sin<br />límites</h1>
+                <button class="btn-hero" id="btnSlide2">Explorar</button>
+            </div>
+            <div class="slide">
+                <p>Cada proyecto</p>
+                <h1>Una obra<br />única</h1>
+                <button class="btn-hero" id="btnSlide3">Conocer más</button>
+            </div>
+        </div>
+
+        <!-- Flechas de navegación -->
+        <button class="flecha" id="flechaIzq">&#8592;</button>
+        <button class="flecha" id="flechaDer">&#8594;</button>
+    </section>
+
+    <!-- ============================
+        SECCIÓN 3: TARJETAS
+        ============================ -->
+    <section class="servicios">
+        <div class="titulo-seccion">
+            <span>Tarjetas</span>
+            <h2>Nuestros Servicios</h2>
+        </div>
+        <div class="grid-servicios">
+            <div class="tarjeta">
+                <div class="icono">✦</div>
+                <h3>Branding</h3>
+                <p>Creamos identidades visuales que conectan con las personas y perduran en el tiempo.</p>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">◈</div>
+                <h3>Web Design</h3>
+                <p>Sitios web que combinan estética depurada con una experiencia de usuario impecable.</p>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">⬡</div>
+                <h3>Fotografía</h3>
+                <p>Capturamos la esencia de cada proyecto con una mirada artística y profesional.</p>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">◎</div>
+                <h3>Social Media</h3>
+                <p>Contenido visual coherente y atractivo para fortalecer tu presencia digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+        SECCIÓN 4: BOTONES
+        ============================ -->
+    <section class="botones-seccion">
+        <h2>Interacción con Botones</h2>
+        <p class="subtitulo">Eventos de ratón</p>
+        <div class="fila-botones">
+            <button class="btn btn-primario" id="btnReservar">Reservar cita</button>
+            <button class="btn btn-secundario" id="btnPortfolio">Ver portfolio</button>
+            <button class="btn btn-peligro" id="btnCancelar">Cancelar</button>
+        </div>
+        <div id="mensaje-btn"></div>
+    </section>
+
+    <!-- ============================
+        SECCIÓN 5: DESPLEGABLES
+        ============================ -->
+    <section class="faq">
+        <div class="titulo-seccion">
+            <span>Preguntas frecuentes</span>
+            <h2>FAQ</h2>
+        </div>
+        <div class="lista-faq">
+
+            <div class="faq-item" id="lista">
+                <button class="faq-cabecera" id="link">
+                    ¿Cuánto tiempo dura un proyecto de branding?
+                    <span class="faq-flecha">+</span>
+                </button>
+                <div class="faq-contenido">
+                    <p>El proceso completo de branding suele durar entre 4 y 8 semanas, dependiendo de la complejidad
+                        del proyecto y la rapidez en las revisiones con el cliente. Incluye investigación, propuestas
+                        conceptuales, desarrollo visual y entrega de manuales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 <span>Lemmon Studio</span> — Ejercicio de Eventos JavaScript</p>
+    </footer>
+</body>
+
+</html>
