@@ -2,15 +2,15 @@
    SESIÓN 1: BOTONES DEL MENÚ DE NAVEGACIÓN
 ══════════════════════════════════════════ */
 /*
-    ENUNCIADO: Recuperar los botones del menú de navegación. Los botones del menú de navegación tienen como clase la class="menu".
-               Para cada botón recuperado añadir tres eventos:
-                     1) El primer evento se ejecutará cuando se pase el ratón por encima del botón. Cuando se ejecute el evento, se añadirá la clase "resalto"
-                        al botón sobre el que se pasa el ratón.
-                     2) El segundo evento se ejecutará cuando el ratón salga del botón. Cuando se ejecute el evento, se eliminará la clase "resalto" del botón
-                        del cual sale el ratón.
-                     3) El tercer evento se ejecutará cuando se haga click sobre el botón. Al hacer click sobre un botón, primero se deberá eliminar la clase
-                        CSS llamada 'seleccionado' de todos los botones, a continuación, en el botón sobre el que se ha hecho click, se añadirá la clase 
-                        CSS llamada 'seleccionado'.
+    ENUNCIADO: 
+            1) Se deben recorrer todos los botones (variable 'botones'). Para cada botón, añadir un evento que se ejecutará cuando se pase el ratón por encima. 
+            Cuando se ejecute el evento, se añadirá la clase "resalto" al botón sobre el que se pasa el ratón.
+
+            2) Se deben recorrer todos los botones (variable 'botones'). Para cada botón, añadir un evento que se ejecutará cuando el ratón salga del botón. 
+            Cuando se ejecute el evento, se eliminará la clase CSS "resalto" del botón del cual sale el ratón.
+
+            3) Se deben recorrer todos los botones (variable 'botones')y eliminar la clase CSS llamada 'seleccionado' de todos los botones.
+            Finalmente, en el botón sobre el que se ha hecho click, se añadirá la clase CSS llamada 'seleccionado'.
 */
 
 let botones = document.querySelectorAll(".menu");
@@ -54,46 +54,48 @@ const flechaIzq = document.querySelector('#flechaIzq');
 const flechaDer = document.querySelector('#flechaDer');
 
 
-let slideActual = 0;
+let indice = 0;
 const totalSlides = 3;
 
 /*
     ENUNCIADO: Asignar un evento a la variable flechaIzq (la variable flechaIzq se corresponde al elemento (botón) con id="flechaIzq") de forma que cuando se haga 
-    click al botón, se pase al mensaje anterior. Para pasar de mensaje se debe emplear la propiedad 'transform' = "translateX(-" + (slideActual * 100) + "%)".
-    La propiedad transform pertenece a style.
+    click al botón, se pase al mensaje anterior. 
+    Para pasar de mensaje se debe emplear la propiedad 'style.transform = "translateX(-" + (indice * 100) + "%)" en la variable 'carrusel'.
 */
 flechaIzq.addEventListener('click', function () {
-    if (slideActual <= 0) {
-        slideActual = (totalSlides - 1);
+    if (indice <= 0) {
+        indice = (totalSlides - 1);
     }
     else {
-        slideActual--;
+        indice--;
     }
 
-    carrusel.style.transform = "translateX(-" + (slideActual * 100) + "%)";
+    carrusel.style.transform = "translateX(-" + (indice * 100) + "%)";
 });
 
 
 /*
     ENUNCIADO: Asignar un evento a la variable flechaDer (la variable flechaDer se corresponde al elemento (botón) con id="flechaDer") de forma que cuando se haga 
-    click al botón, se pase al mensaje siguiente. Para pasar de mensaje se debe emplear la propiedad 'transform' = "translateX(-" + (slideActual * 100) + "%)".
-    La propiedad transform pertenece a style.
+    click al botón, se pase al mensaje siguiente. 
+    Para pasar de mensaje se debe emplear la propiedad 'style.transform = "translateX(-" + (indice * 100) + "%)" en la variable 'carrusel'.
 */
+indice = 0;
 flechaDer.addEventListener('click', function () {
-    if (slideActual === (totalSlides - 1)) {
-        slideActual = 0;
+    if (indice === (totalSlides - 1)) {
+        indice = 0;
     }
     else {
-        slideActual++;
+        indice++;
     }
 
-    carrusel.style.transform = "translateX(-" + (slideActual * 100) + "%)";
+    carrusel.style.transform = "translateX(-" + (indice * 100) + "%)";
 });
 
 
 /*
     ENUNCIADO: automatizar el carrusel para que los mensajes pasen cada 5 segundos hacia la derecha;
 */
+indice
 setInterval(function () {
     if (slideActual === (totalSlides - 1)) {
         slideActual = 0;
@@ -111,12 +113,15 @@ setInterval(function () {
 ══════════════════════════════════════════ */
 /*
     ENUNCIADO: Recuperar todos los elementos que contengan la clase = "tarjeta". 
-               Para cada elemento recuperado añadir dos eventos:
-                1) El primer evento se ejecutará cuando se pase el ratón por encima del elemento. Cuando se ejecute el evento se aplicarán los siguientes estilos:
+
+                1) Recorrer todas las tarjetas y asignar a cada tarjeta un evento que se ejecutará cuando se pase el ratón por encima de una tarjeta. 
+                   Cuando se ejecute el evento se aplicarán los siguientes estilos:
                     this.style.borderColor = '#c8a96e';
                     this.style.transform = 'translateY(-6px)';
                     this.style.boxShadow = '0 10px 30px rgba(200,169,110,0.15)';
-                2) El segundo evento se ejecutará cuando el ratón salga del elemento. Cuando se ejecute el evento se aplicarán los siguientes estilos:
+
+                2) Recorrer todas las tarjetas y asignar a cada tarjeta un evento que se ejecutará cuando el ratón salga de la tarjeta. 
+                   Cuando se ejecute el evento se aplicarán los siguientes estilos: 
                     this.style.borderColor = 'transparent';
                     this.style.transform = 'translateY(0)';
                     this.style.boxShadow = 'none';
@@ -149,13 +154,16 @@ while (i < tarjetas.length)
    SECCIÓN 4: BOTONES PRINCIPALES
 ══════════════════════════════════════════ */
 /*
-    ENUNCIADO: Recuperar los botones que tengan los siguientes id: "btnReservar", "btnPortfolio", "btnCancelar". Cada botón se debe almacenar en una variable.
-               Recuperar el elemento div que tenga el id="mensaje-btn" para mostrar diferentes mensajes de texto.
+    ENUNCIADO: 
 
-               Para cada botón recuperado añadir un evento que se ejecute cuando se haga click sobre él:
-                1) Cuando se pulse sobre el botón con id="btnReservar", el div con id="mensaje-btn" mostrará el siguiente mensaje: ¡Reserva realizada! Nos ponemos en contacto pronto.
-                2) Cuando se pulse sobre el botón con id="btnPortfolio", el div con id="mensaje-btn" mostrará el siguiente mensaje: Abriendo portfolio... ¡Gracias por tu interés!.
-                3) Cuando se pulse sobre el botón con id="btnCancelar", el div con id="mensaje-btn" mostrará el siguiente mensaje: Acción cancelada.
+                1) Crear un evento y asignarlo a la variable 'btnReservar'. 
+                   Cuando se pulse sobre el botón se mostrará en la propiedad 'textContent' de la variable 'mensajeBtn' el siguiente mensaje : ¡Reserva realizada! Nos ponemos en contacto pronto.
+
+                2) Crear un evento y asignarlo a la variable 'btnPortfolio'. 
+                   Cuando se pulse sobre el botón se mostrará en la propiedad 'textContent' de la variable 'mensajeBtn' el siguiente mensaje : Abriendo portfolio... ¡Gracias por tu interés!.
+
+                3) Crear un evento y asignarlo a la variable 'btnCancelar'. 
+                   Cuando se pulse sobre el botón se mostrará en la propiedad 'textContent' de la variable 'mensajeBtn' el siguiente mensaje : Acción cancelada.
 */
 
 const mensajeBtn = document.querySelector('#mensaje-btn');
@@ -182,14 +190,15 @@ btnCancelar.addEventListener('click', function () {
     SECCIÓN 5: DESPLEGABLE
 ══════════════════════════════════════════ */
 /*
-    ENUNCIADO: Sobre el botón con id="link", añadir tres eventos:
-                1) El primer evento se ejecutará cuando se haga click sobre el botón. Cuando se haga click sobre el botón se realizarán dos acciones:
-                        a) Recuperar el elemento con id="lista"
-                        b) Añadir al elemento con id="lista" la clase CSS 'abierto'. (Emplear toggle)
-                2) El segundo evento se ejecutará cuando se pase el cursor por encima del botón con id="link". En ese caso se añadirá la clase CSS 'hover'
-                   al botón.
-                3) El tercer evento se ejecutará cuando el cursor salga del botón con id="link". En ese caso se eliminará la clase CSS 'hover'.
-                   al botón.
+    ENUNCIADO: 
+                1) Crear un evento y asignarlo a la variable 'desplegable'. 
+                   Cuando se pulse sobre el botón se añadirá la clase CSS 'abierto' a la variable 'lista'. Emplear el método 'toggle'.
+
+                2) Crear un evento y asignarlo a la variable 'desplegable'. 
+                   Cuando el ratón pase por encima se añadirá la clase CSS 'hover' a la variable 'desplegable'.
+
+                3) Crear un evento y asignarlo a la variable 'desplegable'. 
+                   Cuando el ratón salga se eliminará la clase CSS 'hover' a la variable 'desplegable'.
 
 */
 
