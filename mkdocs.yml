@@ -59,7 +59,13 @@ nav:
     - 3. Tipos de eventos: ud05/ud53.md
     - 4. Asignación de manejadores: ud05/ud54.md
     - 5. Ejercicios: ud05/ud55.md
-  - UD 06. Formularios:
+  - UD 06. Efectos:
+    - 1. Efectos con imágenes: ud07/ud71.md
+    - 2. Efectos con textos: ud07/ud71.md
+    - 3. Otros efectos: ud07/ud71.md
+    - 4. Marcos: ud07/ud71.md
+    - 5. Ventanas: ud07/ud71.md
+  - UD 07. Formularios:
     - 1. Introducción: ud06/ud61.md
     - 2. Formas de selección del objeto form con JavaScript: ud06/ud62.md
     - 3. Formas de seleccionar los hijos de form con JavaScript: ud06/ud63.md
