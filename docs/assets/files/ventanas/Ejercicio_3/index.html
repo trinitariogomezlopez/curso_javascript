@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURUM VOYAGES — Agencia de Viajes de Lujo</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div>
+            <div class="logo">Aurum <span>Voyages</span></div>
+            <div class="tagline-header">Experiencias de viaje extraordinarias desde 1998</div>
+        </div>
+        <nav>
+            <a href="#">Destinos</a>
+            <a href="#">Servicios</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">✦ Colección exclusiva 2026 ✦</p>
+            <h1 class="hero-title">El mundo,<br><em>a su medida</em></h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Diseñamos itinerarios únicos para viajeros que exigen lo extraordinario. Cada
+                detalle, cuidado. Cada momento, irrepetible.</p>
+        </div>
+    </section>
+
+    <!-- TEXTO ANIMADO SHIMMER -->
+    <div class="glitch-section">
+        <span class="glitch-text">"Viajar es la única cosa que compras que te hace más rico"</span>
+        <span class="tipo-animado" id="tipoAnimado"></span>
+    </div>
+
+    <!-- CARDS DE RESERVA -->
+    <div class="reserva-panel">
+
+        <div class="reserva-card" id="btnDestino">
+            <span class="card-icon">🌍</span>
+            <div class="card-number">01 — Destino</div>
+            <div class="card-title">Elija su Destino</div>
+            <div class="card-desc">Seleccione entre nuestros destinos premium curados por expertos en viajes de lujo.
+            </div>
+            <div class="card-btn">Explorar →</div>
+        </div>
+
+        <div class="reserva-card" id="btnHabitacion">
+            <span class="card-icon">🛏️</span>
+            <div class="card-number">02 — Alojamiento</div>
+            <div class="card-title">Suite de Ensueño</div>
+            <div class="card-desc">Hoteles boutique, villas privadas y resorts cinco estrellas seleccionados para usted.
+            </div>
+            <div class="card-btn">Descubrir →</div>
+        </div>
+
+        <div class="reserva-card" id="btnExtra">
+            <span class="card-icon">✨</span>
+            <div class="card-number">03 — Extras</div>
+            <div class="card-title">Experiencias Únicas</div>
+            <div class="card-desc">Cenas privadas, yates, helicópteros y experiencias que solo nosotros podemos ofrecer.
+            </div>
+            <div class="card-btn">Personalizar →</div>
+        </div>
+
+    </div>
+
+    <!-- PANEL RESUMEN -->
+    <div class="resumen-section">
+        <div class="resumen-grid">
+            <div class="resumen-item">
+                <div class="resumen-label">Destino seleccionado</div>
+                <div class="resumen-valor" id="r-destino">— Pendiente de selección</div>
+            </div>
+            <div class="resumen-item">
+                <div class="resumen-label">Alojamiento</div>
+                <div class="resumen-valor" id="r-habitacion">— Pendiente de selección</div>
+            </div>
+            <div class="resumen-item">
+                <div class="resumen-label">Experiencia especial</div>
+                <div class="resumen-valor" id="r-extra">— Pendiente de selección</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">AURUM VOYAGES</div>
+        <div class="footer-text">© 2026 — Todos los derechos reservados — Madrid · París · Dubái</div>
+    </footer>
+
+    <!-- TOAST -->
+    <div class="notif" id="notif">
+        <div class="notif-title">✦ Selección actualizada</div>
+        <div id="notif-msg"></div>
+    </div>
+
+
+</body>
+
+</html>

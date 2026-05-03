@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #fff8f0;
+  color: #333;
+}
+
+/* ── CABECERA ── */
+header {
+  background: #c0392b;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+.logo-icon {
+  font-size: 3rem;
+}
+.logo-text h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 2rem;
+}
+.logo-text p {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* ── MARQUESINA ── */
+.marquesina {
+  background: #f39c12;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.marquesina-pista {
+  display: flex;
+  width: max-content;
+  animation: mover 22s linear infinite;
+}
+.marquesina-pista:hover {
+  animation-play-state: paused;
+}
+
+.marquesina-item {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  padding: 0 40px;
+}
+.marquesina-item::after {
+  content: " 🍕 ";
+}
+
+@keyframes mover {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── BIENVENIDA ── */
+.bienvenida {
+  text-align: center;
+  padding: 40px 40px 20px;
+}
+.bienvenida h2 {
+  font-family: "Fredoka One", cursive;
+  font-size: 2.2rem;
+  color: #c0392b;
+  margin-bottom: 12px;
+}
+.bienvenida p {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── INSTRUCCIÓN ── */
+.instruccion {
+  background: #eafaf1;
+  border-left: 6px solid #27ae60;
+  margin: 10px 40px 28px;
+  padding: 14px 22px;
+  border-radius: 0 10px 10px 0;
+  font-size: 1rem;
+  color: #1e8449;
+  font-weight: 700;
+}
+
+/* ── BOTONES ── */
+.botones {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 0 40px 40px;
+  flex-wrap: wrap;
+}
+
+.btn-grande {
+  background: white;
+  border: 3px solid #c0392b;
+  border-radius: 16px;
+  padding: 28px 32px;
+  cursor: pointer;
+  width: 210px;
+  text-align: center;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: "Nunito", sans-serif;
+}
+.btn-grande:hover {
+  background: #c0392b;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(192, 57, 43, 0.3);
+}
+.btn-grande:hover .btn-subtitulo {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-grande:hover .btn-titulo {
+  color: white;
+}
+.btn-grande:hover .btn-numero {
+  background: white;
+  color: #c0392b;
+}
+
+.btn-numero {
+  display: inline-block;
+  background: #c0392b;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.btn-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+.btn-titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+.btn-subtitulo {
+  font-size: 0.8rem;
+  color: #888;
+  display: block;
+}
+
+/* ── RESUMEN ── */
+.resumen {
+  background: white;
+  border: 3px solid #2ecc71;
+  border-radius: 16px;
+  margin: 0 40px 40px;
+  padding: 28px 32px;
+}
+.resumen h3 {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.4rem;
+  color: #27ae60;
+  margin-bottom: 20px;
+}
+.resumen-filas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resumen-fila {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border-left: 5px solid #bdc3c7;
+  transition:
+    border-color 0.4s,
+    background 0.4s;
+}
+.resumen-fila.recibido {
+  border-color: #27ae60;
+  background: #eafaf1;
+  animation: saltito 0.5s ease;
+}
+@keyframes saltito {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.resumen-icono {
+  font-size: 1.8rem;
+}
+.resumen-info {
+  flex: 1;
+}
+.resumen-etiqueta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+}
+.resumen-valor {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 2px;
+}
+.resumen-fila.recibido .resumen-valor {
+  color: #1e8449;
+}
+
+.estado-badge {
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #ecf0f1;
+  color: #999;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.recibido .estado-badge {
+  background: #27ae60;
+  color: white;
+}
+
+/* ── NOTIFICACIÓN ── */
+.notif {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #27ae60;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  z-index: 999;
+  pointer-events: none;
+}
+.notif.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── PIE ── */
+footer {
+  background: #c0392b;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 0.85rem;
+}
+
+
+/* -------------------------------------CSS PARA MENSAJE TOAST---------------------------- */
+/* --------------------------------------------------------------------------------------- */
+#toast-contenedor {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  background: black;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-family: "Source Serif 4", Georgia, serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  animation: toast-in 0.3s ease;
+  pointer-events: all;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.toast.saliendo {
+  animation: toast-out 0.3s ease forwards;
+}
+
+.toast-icono {
+  font-size: 1.1rem;
+}
+
+.toast.verde {
+  border-left: 4px solid #50c070;
+}
+
+.toast.rojo {
+  border-left: 4px solid #e05050;
+}
+
+.toast.naranja {
+  border-left: 4px solid #f0a030;
+}
+
+.toast.azul {
+  border-left: 4px solid #5090e0;
+}
+
+/* -------------------------------------FIN CSS PARA MENSAJE TOAST---------------------------- */
+/* ------------------------------------------------------------------------------------------- */
+
+
+
+
+/* ────────────────────────── OFERTA PARPADEANTE ──────────────── */
+/* ────────────────────────────────────────────────────────────── */
+.oferta {
+  background: #ffeaa7;
+  border: 3px dashed #f39c12;
+  border-radius: 12px;
+  padding: 14px 24px;
+  margin: 20px auto;
+  max-width: 480px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d35400;
+  text-align: center;
+}
+.oferta span {
+  animation: parpadeo 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes parpadeo {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+
+/* ────────────────────────── FIN OFERTA PARPADEANTE ──────────────── */
+/* ────────────────────────────────────────────────────────────────── */

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Elegir Pizza</title>
+  <link rel="stylesheet" href="estilo-pizza.css">
+  <script src="app-pizza.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h2>🍕 Elegir Pizza</h2>
+    <span class="paso">Paso 1 de 3</span>
+  </header>
+
+  <div class="content">
+    <h3>¿Qué pizza quiere?</h3>
+    <p class="instruccion">Haga clic en la pizza que prefiera y pulse el botón verde.</p>
+
+    <div class="lista">
+      <div class="opcion" id="margarita">
+        <div class="opcion-icon">🍅</div>
+        <div class="opcion-info">
+          <div class="opcion-nombre">Margherita</div>
+          <div class="opcion-desc">Tomate, mozzarella y albahaca fresca</div>
+        </div>
+      </div>
+      <div class="opcion" id="queso">
+        <div class="opcion-icon">🧀</div>
+        <div class="opcion-info">
+          <div class="opcion-nombre">Cuatro Quesos</div>
+          <div class="opcion-desc">Mozzarella, gorgonzola, gouda y parmesano</div>
+        </div>
+      </div>
+      <div class="opcion" id="barbacoa">
+        <div class="opcion-icon">🥩</div>
+        <div class="opcion-info">
+          <div class="opcion-nombre">Barbacoa</div>
+          <div class="opcion-desc">Pollo, bacon, cebolla y salsa barbacoa</div>
+        </div>
+      </div>
+      <div class="opcion" id="vegetariana">
+        <div class="opcion-icon">🥦</div>
+        <div class="opcion-info">
+          <div class="opcion-nombre">Vegetariana</div>
+          <div class="opcion-desc">Pimientos, champiñones, cebolla y aceitunas</div>
+        </div>
+      </div>
+      <div class="opcion" id="napolitana">
+        <div class="opcion-icon">🫙</div>
+        <div class="opcion-info">
+          <div class="opcion-nombre">Napolitana</div>
+          <div class="opcion-desc">Tomate, anchoas, alcaparras y orégano</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-confirmar" id="btnConfirmar" disabled>
+      ✔ Confirmar pizza
+    </button>
+    <p class="msg" id="msg"></p>
+  </div>
+</body>
+</html>

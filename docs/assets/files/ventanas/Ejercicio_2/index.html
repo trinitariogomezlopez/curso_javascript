@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzería Don Tomate</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-icon">🍕</div>
+    <div class="logo-text">
+      <h1>Pizzería Don Tomate</h1>
+      <p>La mejor pizza de la ciudad · Desde 1985</p>
+    </div>
+  </header>
+
+  <!-- TOASTS -->
+  <div id="toast-contenedor"></div>
+  
+  <div class="bienvenida">
+    <h2>🍕 ¡Haga su pedido!</h2>
+    <p>Pulse cada botón para elegir su pizza, el tamaño y el postre.<br>Sus elecciones aparecerán en el resumen de
+      abajo.</p>
+    <div class="oferta">
+      <span>⭐ OFERTA DEL DÍA: 2 pizzas grandes por 18 € ⭐</span>
+    </div>
+    <p class="frase-animada" id="fraseAnimada"></p>
+  </div>
+
+  <div class="instruccion">
+    👇 Pulse los botones de abajo para completar su pedido en 3 pasos
+  </div>
+
+  <div class="botones">
+    <div class="btn-grande" id="btnPizza">
+      <div class="btn-numero">1</div>
+      <span class="btn-icon">🍕</span>
+      <span class="btn-titulo">Elegir Pizza</span>
+      <span class="btn-subtitulo">Seleccione su sabor favorito</span>
+    </div>
+    <div class="btn-grande" id="btnTamanyo">
+      <div class="btn-numero">2</div>
+      <span class="btn-icon">📏</span>
+      <span class="btn-titulo">Elegir Tamaño</span>
+      <span class="btn-subtitulo">Individual, mediana o grande</span>
+    </div>
+    <div class="btn-grande" id="btnPostre">
+      <div class="btn-numero">3</div>
+      <span class="btn-icon">🍰</span>
+      <span class="btn-titulo">Elegir Postre</span>
+      <span class="btn-subtitulo">El broche final perfecto</span>
+    </div>
+  </div>
+
+  <div class="resumen">
+    <h3>🧾 Su pedido hasta ahora</h3>
+    <div class="resumen-filas">
+
+      <div class="resumen-fila" id="fila-pizza">
+        <div class="resumen-icono">🍕</div>
+        <div class="resumen-info">
+          <div class="resumen-etiqueta">Pizza elegida</div>
+          <div class="resumen-valor" id="val-pizza">Todavía no ha elegido</div>
+        </div>
+      </div>
+
+      <div class="resumen-fila" id="fila-tamano">
+        <div class="resumen-icono">📏</div>
+        <div class="resumen-info">
+          <div class="resumen-etiqueta">Tamaño elegido</div>
+          <div class="resumen-valor" id="val-tamano">Todavía no ha elegido</div>
+        </div>
+      </div>
+
+      <div class="resumen-fila" id="fila-postre">
+        <div class="resumen-icono">🍰</div>
+        <div class="resumen-info">
+          <div class="resumen-etiqueta">Postre elegido</div>
+          <div class="resumen-valor" id="val-postre">Todavía no ha elegido</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="notif" id="notif">✅ <span id="notif-msg"></span></div>
+
+  <footer>
+    📍 Calle Mayor 23 · Tel: 965 123 456 · Abierto todos los días de 12:00 a 24:00
+  </footer>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

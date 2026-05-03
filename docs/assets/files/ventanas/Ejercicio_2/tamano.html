@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Elegir Tamaño</title>
+    <link rel="stylesheet" href="estilo-tamano.css">
+    <script src="app-tamano.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h2>📏 Elegir Tamaño</h2>
+        <span class="paso">Paso 2 de 3</span>
+    </header>
+
+    <div class="content">
+        <h3>¿Qué tamaño prefiere?</h3>
+        <p class="instruccion">Haga clic en el tamaño que desea y pulse el botón naranja.</p>
+
+        <div class="tamanos">
+            <div class="t-card" id="individual">
+                <div class="t-icono">🔵</div>
+                <div>
+                    <div class="t-nombre">Individual</div>
+                    <div class="t-detalle">25 cm · Perfecta para 1 persona</div>
+                    <div class="t-precio">7,50 €</div>
+                </div>
+            </div>
+            <div class="t-card" id="mediana">
+                <div class="t-icono">🟠</div>
+                <div>
+                    <div class="t-nombre">Mediana</div>
+                    <div class="t-detalle">33 cm · Ideal para 2 personas</div>
+                    <div class="t-precio">10,50 €</div>
+                </div>
+            </div>
+            <div class="t-card" id="grande">
+                <div class="t-icono">🔴</div>
+                <div>
+                    <div class="t-nombre">Grande</div>
+                    <div class="t-detalle">40 cm · Para 3 o 4 personas</div>
+                    <div class="t-precio">13,50 €</div>
+                </div>
+            </div>
+            <div class="t-card" id="familiar">
+                <div class="t-icono">🟣</div>
+                <div>
+                    <div class="t-nombre">Familiar</div>
+                    <div class="t-detalle">50 cm · Para toda la familia 👨‍👩‍👧‍👦</div>
+                    <div class="t-precio">18,00 €</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-confirmar" id="btnConfirmar" disabled>
+            ✔ Confirmar tamaño
+        </button>
+        <p class="msg" id="msg"></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background: #fff8f0;
+  color: #333;
+}
+
+header {
+  background: #e67e22;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h2 {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.4rem;
+}
+.paso {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.content {
+  padding: 24px;
+}
+h3 {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.2rem;
+  color: #e67e22;
+  margin-bottom: 6px;
+}
+.instruccion {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.tamanos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.t-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 22px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    transform 0.15s;
+}
+.t-card:hover {
+  border-color: #e67e22;
+  background: #fff7f0;
+  transform: scale(1.01);
+}
+.t-card.seleccionada {
+  border-color: #e67e22;
+  background: #fff7f0;
+}
+.t-card.seleccionada::after {
+  content: "✔";
+  margin-left: auto;
+  color: #e67e22;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.t-icono {
+  font-size: 2.4rem;
+}
+.t-nombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.t-detalle {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 2px;
+}
+.t-precio {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e67e22;
+  margin-top: 4px;
+}
+
+.btn-confirmar {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px;
+  background: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-confirmar:hover {
+  background: #ca6f1e;
+}
+.btn-confirmar:disabled {
+  background: #ccc;
+  cursor: default;
+}
+
+.msg {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #27ae60;
+  min-height: 1.2em;
+}

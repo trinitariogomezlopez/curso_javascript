@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Alojamiento — Aurum Voyages</title>
+    <link rel="stylesheet" href="estilo-habitacion.css">
+    <script src="app-habitacion.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">AURUM <em style="font-style:italic;font-family:'Cormorant Garamond',serif;">Voyages</em></div>
+        <span class="step-label">Paso 02 — Alojamiento</span>
+    </header>
+
+    <div class="content">
+        <h2>Su <em>Suite</em> ideal</h2>
+        <p class="subtitle">Seleccione el tipo de alojamiento exclusivo</p>
+
+        <div class="hab-list">
+            <div class="hab-card" id="suiteDeluxe">
+                <div class="hab-icon">🌊</div>
+                <div class="hab-info">
+                    <div class="hab-name">Suite Deluxe Vista Mar</div>
+                    <div class="estrellas">★★★★★</div>
+                    <div class="hab-desc">Terraza privada · Jacuzzi · Mayordomía 24h</div>
+                </div>
+                <div class="hab-price">980 € / noche</div>
+            </div>
+
+            <div class="hab-card" id="villa">
+                <div class="hab-icon">🏡</div>
+                <div class="hab-info">
+                    <div class="hab-name">Villa Privada con Piscina</div>
+                    <div class="estrellas">★★★★★</div>
+                    <div class="hab-desc">Piscina infinita · Chef privado · 3 habitaciones</div>
+                </div>
+                <div class="hab-price">2.400 € / noche</div>
+            </div>
+
+            <div class="hab-card" id="bungalow">
+                <div class="hab-icon">🪸</div>
+                <div class="hab-info">
+                    <div class="hab-name">Bungalow Sobre el Agua</div>
+                    <div class="estrellas">★★★★★</div>
+                    <div class="hab-desc">Suelo de cristal · Acceso directo al mar · Spa</div>
+                </div>
+                <div class="hab-price">1.650 € / noche</div>
+            </div>
+
+            <div class="hab-card" id="urban">
+                <div class="hab-icon">🏙️</div>
+                <div class="hab-info">
+                    <div class="hab-name">Penthouse Urban Luxury</div>
+                    <div class="estrellas">★★★★★</div>
+                    <div class="hab-desc">Rooftop · Servicio de limusina · Vistas 360°</div>
+                </div>
+                <div class="hab-price">3.200 € / noche</div>
+            </div>
+        </div>
+
+        <button class="confirmar" id="btnConfirmar" disabled>Confirmar alojamiento</button>
+        <p class="msg" id="msg"></p>
+    </div>
+</body>
+
+</html>

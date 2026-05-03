@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Pizzería Don Tomate</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>🍕 Pizzería Don Tomate</h1>
+    <p>La mejor pizza de la ciudad · Desde 1985</p>
+  </header>
+
+  <div class="contenido">
+
+    <h2>Haga su pedido</h2>
+
+    <div class="instruccion">
+      Pulse cada botón para abrir una ventana y rellenar los datos. Sus respuestas aparecerán en el resumen de abajo.
+    </div>
+
+    <div class="botones">
+      <button class="btn" id="btnPizza">
+        1. Escribir pizza
+      </button>
+      <button class="btn" id="btnTamanyo">
+        2. Escribir tamaño
+      </button>
+      <button class="btn" id="btnPostre">
+        3. Escribir postre
+      </button>
+    </div>
+
+    <div class="resumen">
+      <h3>Su pedido</h3>
+      <div class="fila">
+        <span class="fila-etiqueta">Pizza:</span>
+        <span class="fila-valor" id="val-pizza">—</span>
+      </div>
+      <div class="fila">
+        <span class="fila-etiqueta">Tamaño:</span>
+        <span class="fila-valor" id="val-tamano">—</span>
+      </div>
+      <div class="fila">
+        <span class="fila-etiqueta">Postre:</span>
+        <span class="fila-valor" id="val-postre">—</span>
+      </div>
+    </div>
+
+    <button class="btn-pagar" id="btnPagar">
+      💳 Pagar pedido
+    </button>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="fondo-modal" id="fondoModal">
+    <div class="modal">
+      <div class="modal-cabecera">
+        ✅ Confirmación de pago
+      </div>
+      <div class="modal-cuerpo">
+        <p>Su pedido ha sido recibido</p>
+        <p>✔ Pago procesado correctamente.</p>
+        <p>🛵 Su pedido llegará en unos 30 minutos.</p>
+        <p>¡Gracias por su compra!</p>
+      </div>
+      <div class="modal-pie">
+        <button class="btn-cerrar" id="btnCerrar">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    📍 Calle Mayor 23 · Tel: 965 123 456
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Elegir Postre</title>
+    <link rel="stylesheet" href="estilo-postre.css">
+    <script src="app-postre.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h2>🍰 Elegir Postre</h2>
+        <span class="paso">Paso 3 de 3</span>
+    </header>
+
+    <div class="content">
+        <h3>¿Y de postre?</h3>
+        <p class="instruccion">Haga clic en el postre que le apetezca y pulse el botón morado.</p>
+
+        <div class="grid">
+            <div class="p-card" id="tiramisu">
+                <div class="badge-popular">⭐ El más pedido</div>
+                <div class="p-icono">☕</div>
+                <div class="p-nombre">Tiramisú</div>
+                <div class="p-desc">Receta casera de la abuela italiana</div>
+                <div class="p-precio">4,50 €</div>
+            </div>
+            <div class="p-card" id="queso">
+                <div class="p-icono">🍮</div>
+                <div class="p-nombre">Tarta de Queso</div>
+                <div class="p-desc">Con mermelada de frutos rojos</div>
+                <div class="p-precio">4,00 €</div>
+            </div>
+            <div class="p-card" id="helado">
+                <div class="p-icono">🍦</div>
+                <div class="p-nombre">Helado</div>
+                <div class="p-desc">3 bolas a elegir entre 8 sabores</div>
+                <div class="p-precio">3,50 €</div>
+            </div>
+            <div class="p-card" id="brownie">
+                <div class="p-icono">🍫</div>
+                <div class="p-nombre">Brownie</div>
+                <div class="p-desc">Chocolate negro templado con nata</div>
+                <div class="p-precio">4,00 €</div>
+            </div>
+            <div class="p-card" id="fruta">
+                <div class="p-icono">🍓</div>
+                <div class="p-nombre">Fruta</div>
+                <div class="p-desc">Fruta fresca de temporada</div>
+                <div class="p-precio">2,50 €</div>
+            </div>
+            <div class="p-card" id="nopostre">
+                <div class="p-icono">🙅</div>
+                <div class="p-nombre">Sin postre</div>
+                <div class="p-desc">Ya estoy lleno/a, gracias</div>
+                <div class="p-precio">0,00 €</div>
+            </div>
+        </div>
+
+        <button class="btn-confirmar" id="btnConfirmar" disabled>
+            ✔ Confirmar postre
+        </button>
+        <p class="msg" id="msg"></p>
+    </div>
+</body>
+
+</html>

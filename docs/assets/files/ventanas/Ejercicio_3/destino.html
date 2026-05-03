@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Elegir Destino — Aurum Voyages</title>
+    <link rel="stylesheet" href="estilo-destino.css">
+    <script src="app-destino.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">AURUM <em style="font-style:italic;font-family:'Cormorant Garamond',serif;">Voyages</em></div>
+        <span class="step-label">Paso 01 — Destino</span>
+    </header>
+
+    <div class="content">
+        <h2>Elija su <em>Destino</em></h2>
+        <p class="subtitle">Seleccione el lugar que desea explorar</p>
+
+        <div class="grid">
+            <div class="dest-card" id="santorini">
+                <div class="dest-flag">🏛️</div>
+                <div class="dest-name">Santorini</div>
+                <div class="dest-country">Grecia · Mediterráneo</div>
+                <div class="dest-price">Desde 4.800 € / persona</div>
+            </div>
+            <div class="dest-card" id="kyoto">
+                <div class="dest-flag">⛩️</div>
+                <div class="dest-name">Kyoto</div>
+                <div class="dest-country">Japón · Asia Oriental</div>
+                <div class="dest-price">Desde 6.200 € / persona</div>
+            </div>
+            <div class="dest-card" id="maldivas">
+                <div class="dest-flag">🐠</div>
+                <div class="dest-name">Maldivas</div>
+                <div class="dest-country">Océano Índico</div>
+                <div class="dest-price">Desde 7.500 € / persona</div>
+            </div>
+            <div class="dest-card" id="amalfitana">
+                <div class="dest-flag">🍋</div>
+                <div class="dest-name">Costa Amalfitana</div>
+                <div class="dest-country">Italia · Mediterráneo</div>
+                <div class="dest-price">Desde 5.100 € / persona</div>
+            </div>
+            <div class="dest-card" id="dubai">
+                <div class="dest-flag">🏙️</div>
+                <div class="dest-name">Dubái</div>
+                <div class="dest-country">Emiratos Árabes Unidos</div>
+                <div class="dest-price">Desde 5.900 € / persona</div>
+            </div>
+            <div class="dest-card" id="bali">
+                <div class="dest-flag">🌺</div>
+                <div class="dest-name">Bali</div>
+                <div class="dest-country">Indonesia · Asia</div>
+                <div class="dest-price">Desde 4.300 € / persona</div>
+            </div>
+        </div>
+
+        <button class="confirmar" id="btnConfirmar" disabled>Confirmar destino</button>
+        <p class="msg" id="msg"></p>
+    </div>
+
+
+</body>
+
+</html>
