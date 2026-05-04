@@ -10,9 +10,10 @@ btnEnviar.addEventListener("click", function() {
     let okTelefono = validarTelefono();
     let okEdad = validarEdad();
     let okProvincia = validarProvincia();
-    
+    var okSexo = validarSexo();
+
     // Si todos son correctos, mostramos el mensaje de éxito
-    if (okNombre === true && okEmail === true && okTelefono === true && okEdad === true && okProvincia === true ) {
+    if (okNombre === true && okEmail === true && okTelefono === true && okEdad === true && okProvincia === true && okSexo === true) {
         document.getElementById('exito').style.display = 'block';
     } else {
         document.getElementById('exito').style.display = 'none';
@@ -28,8 +29,8 @@ function validarNombre() {
     let inputNombre = document.querySelector('#nombre');
     let nombre = inputNombre.value;
 
-    let divError =  document.getElementById('err-nombre');
-    let divOk =  document.getElementById('ok-nombre');
+    let divError = document.getElementById('err-nombre');
+    let divOk = document.getElementById('ok-nombre');
 
     // Comprobar si el nombre es vacío
     if (nombre === '') {
@@ -57,8 +58,8 @@ function validarEmail() {
     let inputEmail = document.querySelector('#email');
     let email = inputEmail.value;
 
-    let divError =  document.getElementById('err-email');
-    let divOk =  document.getElementById('ok-email');
+    let divError = document.getElementById('err-email');
+    let divOk = document.getElementById('ok-email');
 
     // Comprobar si el email es vacío
     if (email === '') {
@@ -86,8 +87,8 @@ function validarTelefono() {
     let inputTelefono = document.querySelector('#telefono');
     let telefono = inputTelefono.value;
 
-    let divError =  document.getElementById('err-telefono');
-    let divOk =  document.getElementById('ok-telefono');
+    let divError = document.getElementById('err-telefono');
+    let divOk = document.getElementById('ok-telefono');
 
     // Comprobar si el teléfono es vacío
     if (telefono === '') {
@@ -121,8 +122,8 @@ function validarEdad() {
     let inputEdad = document.querySelector('#edad');
     let edad = inputEdad.value;
 
-    let divError =  document.getElementById('err-edad');
-    let divOk =  document.getElementById('ok-edad');
+    let divError = document.getElementById('err-edad');
+    let divOk = document.getElementById('ok-edad');
 
     // Comprobar si el teléfono es vacío
     if (edad === '') {
@@ -163,8 +164,8 @@ function validarProvincia() {
     let inputProvincia = document.querySelector('#provincia');
     let provincia = inputProvincia.value;
 
-    let divError =  document.getElementById('err-provincia');
-    let divOk =  document.getElementById('ok-provincia');
+    let divError = document.getElementById('err-provincia');
+    let divOk = document.getElementById('ok-provincia');
 
     // Comprobar si la provincia es vacía
     if (provincia === '') {
@@ -175,6 +176,48 @@ function validarProvincia() {
     mostrarOk(inputProvincia, divError, divOk, '✔ Provincia seleccionada.');
     return true;
 }
+
+
+
+/* ──────────────────────────────── VALIDAR SEXO (radio buttons)────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+───────────── Regla: Los radio no tienen .value directamente si no hay ninguno marcado. ────────────────────────────
+─────────────────────Hay que recorrer todos los que tienen el mismo name y ver si alguno está marcado ──────────────*/
+
+function validarSexo() {
+    // Recoge todos los radio con name="sexo"
+    let opciones = document.querySelectorAll('.sexo');
+    let grupoRadio = document.getElementById('grupo-sexo');
+
+    let divError = document.getElementById('err-sexo');
+    let divOk = document.getElementById('ok-sexo');
+
+    // Recorre cada radio y comprueba si está marcado
+    let marcado = false;
+    let i = 0;
+    while (i < opciones.length) {
+        if (opciones[i].checked) {
+            marcado = true;
+        }
+
+        i++;
+    }
+
+    if (marcado === false) 
+    {
+        divError.textContent = '⚠ Por favor, seleccione una opción.';
+        divError.style.display = 'block';
+        divOk.style.display = 'none';
+        return false;
+    }
+    else {
+        divOk.textContent = 'Opción seleccionada correctamente.';
+        divOk.style.display = 'block';
+        divError.style.display = 'none';
+        return true;
+    }
+}
+
 
 
 /* ────────────────────── FUNCIONES AUXILIARES ────────────────────────────────

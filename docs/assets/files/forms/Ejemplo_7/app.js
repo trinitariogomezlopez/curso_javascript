@@ -10,10 +10,11 @@ btnEnviar.addEventListener("click", function() {
     let okTelefono = validarTelefono();
     let okEdad = validarEdad();
     let okProvincia = validarProvincia();
-    var okSexo = validarSexo();
+    let okSexo = validarSexo();
+    let okTerminos = validarTerminos();
 
     // Si todos son correctos, mostramos el mensaje de éxito
-    if (okNombre === true && okEmail === true && okTelefono === true && okEdad === true && okProvincia === true && okSexo === true) {
+    if (okNombre === true && okEmail === true && okTelefono === true && okEdad === true && okProvincia === true && okSexo === true && okTerminos === true) {
         document.getElementById('exito').style.display = 'block';
     } else {
         document.getElementById('exito').style.display = 'none';
@@ -219,6 +220,30 @@ function validarSexo() {
 }
 
 
+/* ──────────────────────────────── VALIDAR TÉRMINOS (checkbox)─────────────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+───────────── Regla: Un checkbox solo tiene dos estados: marcado (.checked === true) o no marcado (.checked === false). ────────────────────────────*/
+function validarTerminos() 
+{
+    let checkbox = document.querySelector('#terminos');
+    let divError = document.getElementById('err-terminos');
+    let divOk = document.getElementById('ok-terminos');
+
+    if (checkbox.checked === false) {
+        divError.textContent = '⚠ Debe aceptar los términos y condiciones para continuar.';
+        divError.style.display = 'block';
+        divOk.style.display = 'none';
+        return false;
+    }
+    else {
+        divOk.textContent = '✔ Términos aceptados.';
+        divOk.style.display = 'block';
+        divError.style.display = 'none';
+        return true;
+    }
+}
+
+
 
 /* ────────────────────── FUNCIONES AUXILIARES ────────────────────────────────
 ────────────────────────────────────────────────────────────────────────────────*/
@@ -248,3 +273,7 @@ function mostrarOk(campo, divError, divOk, mensaje) {
 
     divError.style.display = 'none';
 }
+
+
+
+

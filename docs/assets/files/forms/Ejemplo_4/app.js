@@ -7,9 +7,11 @@ btnEnviar.addEventListener("click", function() {
     // Validamos cada campo y guardamos si hay errores
     let okNombre = validarNombre();
     let okEmail = validarEmail();
-
+    var okTelefono = validarTelefono();
+    var okEdad = validarEdad();
+    
     // Si todos son correctos, mostramos el mensaje de éxito
-    if (okNombre === true && okEmail === true) {
+    if (okNombre === true && okEmail === true && okTelefono === true && okEdad === true ) {
         document.getElementById('exito').style.display = 'block';
     } else {
         document.getElementById('exito').style.display = 'none';
@@ -52,24 +54,102 @@ function validarNombre() {
 
 function validarEmail() {
     let inputEmail = document.querySelector('#email');
-    let nombre = inputEmail.value;
+    let email = inputEmail.value;
 
     let divError =  document.getElementById('err-email');
     let divOk =  document.getElementById('ok-email');
 
     // Comprobar si el email es vacío
-    if (nombre === '') {
+    if (email === '') {
         mostrarError(inputEmail, divError, divOk, 'El correo electrónico es obligatorio.');
         return false;
     }
 
     // Comprobamos que tenga @ y al menos un punto después
-    if (nombre.indexOf('@') === -1 || nombre.indexOf('.') === -1) {
+    if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
         mostrarError(inputEmail, divError, divOk, 'El correo no es válido. Debe contener @ y un punto. Ejemplo: ana@correo.com');
         return false;
     }
 
     mostrarOk(inputEmail, divError, divOk, '✔ Correo electrónico correcto.');
+
+    return true;
+}
+
+
+/* ────────────────────── VALIDAR TELÉFONO ────────────────────────────
+─────────────────────────────────────────────────────────────────────
+───────────── Regla: exactamente 9 dígitos numéricos ──────────────────*/
+
+function validarTelefono() {
+    let inputTelefono = document.querySelector('#telefono');
+    let telefono = inputTelefono.value;
+
+    let divError =  document.getElementById('err-telefono');
+    let divOk =  document.getElementById('ok-telefono');
+
+    // Comprobar si el teléfono es vacío
+    if (telefono === '') {
+        mostrarError(inputTelefono, divError, divOk, 'El teléfono es obligatorio.');
+        return false;
+    }
+
+    // isNaN comprueba si NO es un número
+    if (isNaN(telefono)) {
+        mostrarError(inputTelefono, divError, divOk, 'El teléfono solo puede contener números, sin espacios ni letras.');
+        return false;
+    }
+
+    // Comprobar si el teléfono tiene exactamente 9 dígitos
+    if (telefono.length !== 9) {
+        mostrarError(inputTelefono, divError, divOk, 'El teléfono debe tener exactamente 9 dígitos. Tiene ' + telefono.length + '.');
+        return false;
+    }
+
+    mostrarOk(inputTelefono, divError, divOk, '✔ Teléfono correcto.');
+
+    return true;
+}
+
+
+/* ────────────────────── VALIDAR EDAD ────────────────────────────
+─────────────────────────────────────────────────────────────────────
+───────────── Regla: número entre 18 y 99 ──────────────────*/
+
+function validarEdad() {
+    let inputEdad = document.querySelector('#edad');
+    let edad = inputEdad.value;
+
+    let divError =  document.getElementById('err-edad');
+    let divOk =  document.getElementById('ok-edad');
+
+    // Comprobar si el teléfono es vacío
+    if (edad === '') {
+        mostrarError(inputEdad, divError, divOk, 'La edad es obligatoria.');
+        return false;
+    }
+
+    // isNaN comprueba si NO es un número
+    if (isNaN(edad)) {
+        mostrarError(inputEdad, divError, divOk, 'La edad debe ser un número. Ejemplo: 35');
+        return false;
+    }
+
+    let numero = parseInt(edad);
+
+    // Comprobar si la edad es menor a 18 años
+    if (numero < 18) {
+        mostrarError(inputEdad, divError, divOk, 'Debe ser mayor de 18 años para registrarse.');
+        return false;
+    }
+
+    // Comprobar si la edad es mayor a 99 años
+    if (numero > 99) {
+        mostrarError(inputEdad, divError, divOk, 'Por favor, introduzca una edad válida (máximo 99).');
+        return false;
+    }
+
+    mostrarOk(inputEdad, divError, divOk, '✔ Edad correcta.');
     return true;
 }
 
@@ -102,4 +182,3 @@ function mostrarOk(campo, divError, divOk, mensaje) {
 
     divError.style.display = 'none';
 }
-
