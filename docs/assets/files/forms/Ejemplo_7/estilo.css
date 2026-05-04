@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+/* ── CAJA DEL FORMULARIO ── */
+.formulario {
+  background: white;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 36px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ── CADA CAMPO ── */
+.campo {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Asterisco rojo en campos obligatorios */
+.obligatorio::after {
+  content: " *";
+  color: #c0392b;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+textarea {
+  height: 90px;
+  resize: vertical;
+}
+
+/* ── BORDE VERDE cuando el campo es correcto ── */
+input.correcto,
+select.correcto,
+textarea.correcto {
+  border-color: #27ae60;
+}
+
+/* ── BORDE ROJO cuando el campo tiene error ── */
+input.error,
+select.error,
+textarea.error {
+  border-color: #c0392b;
+}
+
+/* ── MENSAJE DE ERROR bajo el campo ── */
+.msg-error {
+  display: none;
+  margin-top: 5px;
+  font-size: 0.82rem;
+  color: #c0392b;
+  padding: 6px 10px;
+  background: #fdecea;
+  border-left: 4px solid #c0392b;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── MENSAJE DE OK bajo el campo ── */
+.msg-ok {
+  display: none;
+  margin-top: 5px;
+  font-size: 0.82rem;
+  color: #27ae60;
+  padding: 6px 10px;
+  background: #eafaf1;
+  border-left: 4px solid #27ae60;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── RADIO Y CHECKBOX ── */
+
+/* Cada fila de opción (input + su label) */
+.opcion-fila {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* El label de cada opción: no negrita, no ocupa toda la línea */
+.opcion-label {
+  display: inline;
+  font-weight: normal;
+  font-size: 0.95rem;
+  color: #333;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* El input radio/checkbox: anulamos los estilos generales */
+.opcion-fila input[type="radio"],
+.opcion-fila input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* Borde rojo alrededor del grupo cuando hay error */
+.grupo-error {
+  border: 2px solid #c0392b;
+  border-radius: 6px;
+  padding: 10px 14px;
+  background: #fff5f5;
+}
+
+/* Borde verde alrededor del grupo cuando está correcto */
+.grupo-ok {
+  border: 2px solid #27ae60;
+  border-radius: 6px;
+  padding: 10px 14px;
+  background: #f5fff8;
+}
+
+/* ── BOTÓN ENVIAR ── */
+.btn-enviar {
+  width: 100%;
+  padding: 14px;
+  background: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.btn-enviar:hover {
+  background: #2471a3;
+}
+
+/* ── MENSAJE FINAL DE ÉXITO ── */
+.exito {
+  display: none;
+  margin-top: 20px;
+  padding: 16px;
+  background: #eafaf1;
+  border: 2px solid #27ae60;
+  border-radius: 8px;
+  text-align: center;
+  color: #1e8449;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.nota {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #aaa;
+  margin-top: 14px;
+}

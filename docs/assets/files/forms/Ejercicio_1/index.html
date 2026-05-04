@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1 — Formulario de Contacto</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <h1>✉️ Ejercicio 1 — Formulario de Contacto</h1>
+    <p class="subtitulo">Rellene el formulario. Si todo es correcto, sus datos aparecerán debajo.</p>
+
+    <div class="formulario">
+
+        <!-- NOMBRE -->
+        <div class="campo">
+            <label class="obligatorio" for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Ej: Ana García" />
+            <div class="msg-error" id="err-nombre"></div>
+            <div class="msg-ok" id="ok-nombre"></div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="campo">
+            <label class="obligatorio" for="email">Correo electrónico</label>
+            <input type="text" id="email" placeholder="Ej: ana@correo.com" />
+            <div class="msg-error" id="err-email"></div>
+            <div class="msg-ok" id="ok-email"></div>
+        </div>
+
+        <!-- ASUNTO -->
+        <div class="campo">
+            <label class="obligatorio" for="asunto">Asunto</label>
+            <input type="text" id="asunto" placeholder="Ej: Consulta sobre precios" />
+            <div class="msg-error" id="err-asunto"></div>
+            <div class="msg-ok" id="ok-asunto"></div>
+        </div>
+
+        <!-- MENSAJE -->
+        <div class="campo">
+            <label class="obligatorio" for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Escriba su mensaje aquí..."></textarea>
+            <div class="msg-error" id="err-mensaje"></div>
+            <div class="msg-ok" id="ok-mensaje"></div>
+        </div>
+
+        <button class="btn-enviar" onclick="validarFormulario()">Enviar mensaje</button>
+
+        <p class="nota">* Este formulario es solo de ejemplo. No envía datos reales.</p>
+
+    </div>
+
+    <!-- CAJA DE RESULTADO -->
+    <div class="resultado" id="resultado">
+        <h2>📋 Datos enviados</h2>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Nombre:</span>
+            <span class="resultado-valor" id="res-nombre"></span>
+        </div>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Email:</span>
+            <span class="resultado-valor" id="res-email"></span>
+        </div>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Asunto:</span>
+            <span class="resultado-valor" id="res-asunto"></span>
+        </div>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Mensaje:</span>
+            <span class="resultado-valor" id="res-mensaje"></span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

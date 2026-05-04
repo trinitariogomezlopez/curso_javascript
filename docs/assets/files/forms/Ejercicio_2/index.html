@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 2 — Pedido de Producto</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <h1>🛒 Ejercicio 2 — Pedido de Producto</h1>
+    <p class="subtitulo">Rellene el formulario. Si todo es correcto, el resumen del pedido aparecerá debajo.</p>
+
+    <div class="formulario">
+
+        <!-- NOMBRE -->
+        <div class="campo">
+            <label class="obligatorio" for="nombre">Nombre del cliente</label>
+            <input type="text" id="nombre" placeholder="Ej: Carlos López" />
+            <div class="msg-error" id="err-nombre"></div>
+            <div class="msg-ok" id="ok-nombre"></div>
+        </div>
+
+        <!-- TELÉFONO -->
+        <div class="campo">
+            <label class="obligatorio" for="telefono">Teléfono de contacto</label>
+            <input type="text" id="telefono" placeholder="Ej: 612345678" />
+            <div class="msg-error" id="err-telefono"></div>
+            <div class="msg-ok" id="ok-telefono"></div>
+        </div>
+
+        <!-- PRODUCTO -->
+        <div class="campo">
+            <label class="obligatorio" for="producto">Producto</label>
+            <select id="producto">
+                <option value="">-- Seleccione un producto --</option>
+                <option value="Camiseta — 15 €">Camiseta — 15 €</option>
+                <option value="Pantalón — 30 €">Pantalón — 30 €</option>
+                <option value="Zapatillas — 50 €">Zapatillas — 50 €</option>
+                <option value="Chaqueta — 70 €">Chaqueta — 70 €</option>
+            </select>
+            <div class="msg-error" id="err-producto"></div>
+            <div class="msg-ok" id="ok-producto"></div>
+        </div>
+
+        <!-- CANTIDAD -->
+        <div class="campo">
+            <label class="obligatorio" for="cantidad">Cantidad</label>
+            <input type="text" id="cantidad" placeholder="Ej: 2" />
+            <div class="msg-error" id="err-cantidad"></div>
+            <div class="msg-ok" id="ok-cantidad"></div>
+        </div>
+
+        <!-- ENVÍO — radio buttons -->
+        <div class="campo">
+            <label class="obligatorio">Tipo de envío</label>
+            <div id="grupo-envio">
+                <div class="opcion-fila">
+                    <input type="radio" id="envio-normal" class="envio" value="Envío normal (3-5 días) — 3 €" />
+                    <label class="opcion-label" for="envio-normal">Envío normal (3-5 días) — 3 €</label>
+                </div>
+                <div class="opcion-fila">
+                    <input type="radio" id="envio-rapido" class="envio" value="Envío rápido (24 h) — 8 €" />
+                    <label class="opcion-label" for="envio-rapido">Envío rápido (24 h) — 8 €</label>
+                </div>
+                <div class="opcion-fila">
+                    <input type="radio" id="envio-recogida" class="envio" value="Recogida en tienda — Gratis" />
+                    <label class="opcion-label" for="envio-recogida">Recogida en tienda — Gratis</label>
+                </div>
+            </div>
+            <div class="msg-error" id="err-envio"></div>
+            <div class="msg-ok" id="ok-envio"></div>
+        </div>
+
+        <button class="btn-enviar" onclick="validarFormulario()">Confirmar pedido</button>
+
+        <p class="nota">* Este formulario es solo de ejemplo. No envía datos reales.</p>
+
+    </div>
+
+    <!-- CAJA DE RESULTADO -->
+    <div class="resultado" id="resultado">
+        <h2>🧾 Resumen del pedido</h2>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Cliente:</span>
+            <span class="resultado-valor" id="res-nombre"></span>
+        </div>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Teléfono:</span>
+            <span class="resultado-valor" id="res-telefono"></span>
+        </div>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Producto:</span>
+            <span class="resultado-valor" id="res-producto"></span>
+        </div>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Cantidad:</span>
+            <span class="resultado-valor" id="res-cantidad"></span>
+        </div>
+        <div class="resultado-fila">
+            <span class="resultado-etiqueta">Tipo de envío:</span>
+            <span class="resultado-valor" id="res-envio"></span>
+        </div>
+        <div class="resultado-fila fila-total">
+            <span class="resultado-etiqueta">📦 Pedido confirmado</span>
+            <span class="resultado-valor" id="res-fecha"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>
