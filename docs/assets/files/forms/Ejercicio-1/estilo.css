@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* Aviso sobre la consola */
+.aviso-consola {
+  background: #2c3e50;
+  color: #a8d8ea;
+  padding: 14px 20px;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.aviso-consola strong {
+  color: white;
+}
+
+/* Caja del formulario */
+.formulario {
+  background: white;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 36px 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Separador de sección */
+.seccion-titulo {
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #2c3e50;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin: 28px 0 18px;
+  display: inline-block;
+}
+
+.seccion-titulo:first-child {
+  margin-top: 0;
+}
+
+/* Cada campo */
+.campo {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Etiqueta del tipo de elemento */
+.tipo {
+  font-size: 0.72rem;
+  font-weight: normal;
+  background: #eee;
+  color: #888;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 6px;
+  font-family: monospace;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="color"],
+input[type="range"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Color e range tienen diseño especial */
+input[type="color"] {
+  padding: 3px 6px;
+  height: 44px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+/* Fila para mostrar el valor del range */
+.range-fila {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.range-fila input {
+  flex: 1;
+}
+
+.range-valor {
+  background: #2c3e50;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Radio y checkbox */
+.opcion-fila {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.opcion-fila input[type="radio"],
+.opcion-fila input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.opcion-label {
+  margin-left: 10px;
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Botón */
+.btn-leer {
+  width: 100%;
+  padding: 14px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-leer:hover {
+  background: #1e8449;
+}
+
+.btn-limpiar {
+  width: 100%;
+  padding: 12px;
+  background: #ecf0f1;
+  color: #555;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-limpiar:hover {
+  background: #dde1e4;
+}
+
+/* Aviso de éxito */
+.aviso-ok {
+  display: none;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #eafaf1;
+  border-left: 4px solid #27ae60;
+  color: #1e8449;
+  font-size: 0.9rem;
+  border-radius: 0 6px 6px 0;
+}

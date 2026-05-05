@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Elementos de Formulario — Consola</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <h1>🖥️ Elementos de Formulario</h1>
+    <p class="subtitulo">Rellene los campos y pulse el botón. Los datos se mostrarán en la consola del navegador.</p>
+
+    <!-- INSTRUCCIÓN CONSOLA -->
+    <div class="aviso-consola">
+        <strong>¿Cómo abrir la consola?</strong><br>
+        Pulse <strong>F12</strong> en el teclado → haga clic en la pestaña <strong>"Console"</strong> (o "Consola").<br>
+        Después rellene el formulario y pulse el botón verde. Los datos aparecerán allí.
+    </div>
+
+    <div class="formulario">
+
+        <!-- ──────────────────────────────────── TEXTOS ────────────────────────────────── -->
+        <!-- ────────────────────────────────────────────────────────────────────────────── -->
+        <span class="seccion-titulo">📝 Textos</span>
+
+        <div class="campo">
+            <label for="texto">Texto normal <span class="tipo">type="text"</span></label>
+            <input type="text" id="texto" placeholder="Escriba cualquier texto" />
+        </div>
+
+        <div class="campo">
+            <label for="email">Correo electrónico <span class="tipo">type="email"</span></label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" />
+        </div>
+
+        <div class="campo">
+            <label for="password">Contraseña <span class="tipo">type="password"</span></label>
+            <input type="password" id="password" placeholder="Escriba una contraseña" />
+        </div>
+
+        <div class="campo">
+            <label for="area">Área de texto <span class="tipo">textarea</span></label>
+            <textarea id="area" placeholder="Escriba varias líneas de texto..."></textarea>
+        </div>
+
+        <button class="btn-leer" id="leer-datos-texto">
+            ✅ Leer datos TEXTO en la Consola (F12)
+        </button>
+
+        <!-- ──────────────────────────────────── FIN TEXTOS ────────────────────────────────── -->
+        <!-- ───────────────────────────────────────────────────────────────────────────────────-->
+
+
+
+        <!-- ──────────────────────────────────── NÚMEROS ──────────────────────────────────── -->
+        <!-- ───────────────────────────────────────────────────────────────────────────────── -->
+        <span class="seccion-titulo">🔢 Números</span>
+
+        <div class="campo">
+            <label for="numero">Número <span class="tipo">type="number"</span></label>
+            <input type="number" id="numero" placeholder="Ej: 42" min="0" max="999" />
+        </div>
+
+        <button class="btn-leer" id="leer-datos-numero">
+            ✅ Leer datos NÚMERO en la Consola (F12)
+        </button>
+
+        <!-- ──────────────────────────────────── FIN NÚMEROS ──────────────────────────────────── -->
+        <!-- ───────────────────────────────────────────────────────────────────────────────────── -->
+
+
+
+
+        <!-- ──────────────────────────────────── FECHAS ──────────────────────────────────────── -->
+        <!-- ──────────────────────────────────────────────────────────────────────────────────── -->
+        <span class="seccion-titulo">📅 Fechas y Horas</span>
+
+        <div class="campo">
+            <label for="fecha">Fecha <span class="tipo">type="date"</span></label>
+            <input type="date" id="fecha" />
+        </div>
+
+        <button class="btn-leer" id="leer-datos-fecha">
+            ✅ Leer datos FECHA en la Consola (F12)
+        </button>
+
+        <!-- ──────────────────────────────────── FIN FECHAS ──────────────────────────────────── -->
+        <!-- ──────────────────────────────────────────────────────────────────────────────────── -->
+
+
+
+
+        <!-- ──────────────────────────────────── SELECCIÓN ──────────────────────────────────────── -->
+        <!-- ─────────────────────────────────────────────────────────────────────────────────────── -->
+        <span class="seccion-titulo">☑️ Selección</span>
+
+        <div class="campo">
+            <label for="lista">Lista desplegable <span class="tipo">select</span></label>
+            <select id="lista">
+                <option value="">-- Elija una opción --</option>
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Botones de opción <span class="tipo">radio</span></label>
+            <div class="opcion-fila">
+                <input type="radio" id="r1" name="radio" value="Mañana" />
+                <label class="opcion-label" for="r1">Mañana</label>
+            </div>
+            <div class="opcion-fila">
+                <input type="radio" id="r2" name="radio" value="Tarde" />
+                <label class="opcion-label" for="r2">Tarde</label>
+            </div>
+            <div class="opcion-fila">
+                <input type="radio" id="r3" name="radio" value="Noche" />
+                <label class="opcion-label" for="r3">Noche</label>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>Casillas de verificación <span class="tipo">checkbox</span></label>
+            <div class="opcion-fila">
+                <input type="checkbox" class="check" id="ch1" value="HTML" />
+                <label class="opcion-label" for="ch1">HTML</label>
+            </div>
+            <div class="opcion-fila">
+                <input type="checkbox" class="check" id="ch2" value="CSS" />
+                <label class="opcion-label" for="ch2">CSS</label>
+            </div>
+            <div class="opcion-fila">
+                <input type="checkbox" class="check" id="ch3" value="JavaScript" />
+                <label class="opcion-label" for="ch3">JavaScript</label>
+            </div>
+        </div>
+
+        <button class="btn-leer" id="leer-datos-seleccion">
+            ✅ Leer datos SELECCIÓN en la Consola (F12)
+        </button>
+
+        <!-- ──────────────────────────────────── FIN SELECCIÓN ──────────────────────────────────────── -->
+        <!-- ─────────────────────────────────────────────────────────────────────────────────────────── -->
+
+        
+
+
+        <!-- ──────────────────────────────────── OTROS ──────────────────────────────────────────── -->
+        <!-- ─────────────────────────────────────────────────────────────────────────────────────── -->
+        <span class="seccion-titulo">🎨 Otros</span>
+
+        <div class="campo">
+            <label for="color">Selector de color <span class="tipo">type="color"</span></label>
+            <input type="color" id="color" value="#2c3e50" />
+        </div>
+
+        <button class="btn-leer" id="leer-datos-otros">
+            ✅ Leer datos OTROS en la Consola (F12)
+        </button>
+
+        <!-- ──────────────────────────────────── FIN OTROS ──────────────────────────────────────────── -->
+        <!-- ─────────────────────────────────────────────────────────────────────────────────────────── -->
+
+        <div class="aviso-ok" id="aviso-ok">
+            ✅ Datos enviados a la consola. Pulse F12 y abra la pestaña "Console" para verlos.
+        </div>
+
+    </div>
+
+</body>
+
+</html>

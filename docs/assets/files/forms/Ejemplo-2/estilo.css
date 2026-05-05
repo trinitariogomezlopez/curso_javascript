@@ -1,3 +1,46 @@
+/* Estilos básicos */
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Pseudo-clases para la validación */
+input:required {
+  border-left: 5px solid #0000ff;
+  /* Borde azul para campos requeridos */
+}
+
+input:valid {
+  border-left: 5px solid #00ff00;
+  /* Borde verde para campos válidos */
+}
+
+input:invalid {
+  border-left: 5px solid #ff0000;
+  /* Borde rojo para campos inválidos */
+}
+
+/* Pseudo-clase para campo enfocado */
+input:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,17 +67,19 @@ h1 {
   margin-bottom: 30px;
 }
 
+/* ── CAJA DEL FORMULARIO ── */
 .formulario {
   background: white;
-  max-width: 460px;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 30px 34px;
+  padding: 32px 36px;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ── CADA CAMPO ── */
 .campo {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 label {
@@ -45,13 +90,15 @@ label {
   margin-bottom: 6px;
 }
 
+/* Asterisco rojo en campos obligatorios */
 .obligatorio::after {
   content: " *";
   color: #c0392b;
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
   padding: 10px 14px;
   font-size: 0.95rem;
@@ -61,20 +108,32 @@ select {
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
-  border-color: #e67e22;
+  border-color: #2980b9;
 }
 
+textarea {
+  height: 90px;
+  resize: vertical;
+}
+
+/* ── BORDE VERDE cuando el campo es correcto ── */
 input.correcto,
-select.correcto {
+select.correcto,
+textarea.correcto {
   border-color: #27ae60;
 }
+
+/* ── BORDE ROJO cuando el campo tiene error ── */
 input.error,
-select.error {
+select.error,
+textarea.error {
   border-color: #c0392b;
 }
 
+/* ── MENSAJE DE ERROR bajo el campo ── */
 .msg-error {
   display: none;
   margin-top: 5px;
@@ -86,6 +145,7 @@ select.error {
   border-radius: 0 4px 4px 0;
 }
 
+/* ── MENSAJE DE OK bajo el campo ── */
 .msg-ok {
   display: none;
   margin-top: 5px;
@@ -97,13 +157,16 @@ select.error {
   border-radius: 0 4px 4px 0;
 }
 
-/* ── RADIO ── */
+/* ── RADIO Y CHECKBOX ── */
+
+/* Cada fila de opción (input + su label) */
 .opcion-fila {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
 
+/* El label de cada opción: no negrita, no ocupa toda la línea */
 .opcion-label {
   display: inline;
   font-weight: normal;
@@ -113,7 +176,9 @@ select.error {
   cursor: pointer;
 }
 
-.opcion-fila input[type="radio"] {
+/* El input radio/checkbox: anulamos los estilos generales */
+.opcion-fila input[type="radio"],
+.opcion-fila input[type="checkbox"] {
   width: 18px;
   height: 18px;
   padding: 0;
@@ -121,6 +186,7 @@ select.error {
   cursor: pointer;
 }
 
+/* Borde rojo alrededor del grupo cuando hay error */
 .grupo-error {
   border: 2px solid #c0392b;
   border-radius: 6px;
@@ -128,6 +194,7 @@ select.error {
   background: #fff5f5;
 }
 
+/* Borde verde alrededor del grupo cuando está correcto */
 .grupo-ok {
   border: 2px solid #27ae60;
   border-radius: 6px;
@@ -135,77 +202,33 @@ select.error {
   background: #f5fff8;
 }
 
+/* ── BOTÓN ENVIAR ── */
 .btn-enviar {
   width: 100%;
-  padding: 13px;
-  background: #e67e22;
+  padding: 14px;
+  background: #2980b9;
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 .btn-enviar:hover {
-  background: #ca6f1e;
+  background: #2471a3;
 }
 
-/* ── CAJA DE RESULTADO ── */
-.resultado {
+/* ── MENSAJE FINAL DE ÉXITO ── */
+.exito {
   display: none;
-  max-width: 460px;
-  margin: 30px auto 0;
-  background: white;
-  border: 2px solid #e67e22;
-  border-radius: 10px;
-  padding: 28px 34px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-}
-
-.resultado h2 {
-  font-size: 1.2rem;
-  color: #e67e22;
-  margin-bottom: 18px;
-}
-
-.resultado-fila {
-  display: flex;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 0.95rem;
-}
-
-.resultado-fila:last-child {
-  border-bottom: none;
-}
-
-.resultado-etiqueta {
-  font-weight: bold;
-  color: #555;
-  min-width: 140px;
-}
-
-.resultado-valor {
-  color: #222;
-}
-
-/* Fila del total con fondo destacado */
-.fila-total {
-  background: #fff7ee;
-  border-radius: 6px;
-  padding: 12px 10px !important;
-  margin-top: 6px;
-  border-bottom: none !important;
-}
-
-.fila-total .resultado-etiqueta {
-  color: #e67e22;
-  font-size: 1rem;
-}
-.fila-total .resultado-valor {
-  color: #e67e22;
+  margin-top: 20px;
+  padding: 16px;
+  background: #eafaf1;
+  border: 2px solid #27ae60;
+  border-radius: 8px;
+  text-align: center;
+  color: #1e8449;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -216,3 +239,4 @@ select.error {
   color: #aaa;
   margin-top: 14px;
 }
+
