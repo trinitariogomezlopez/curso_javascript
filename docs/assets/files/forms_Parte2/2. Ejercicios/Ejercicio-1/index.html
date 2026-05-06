@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Ejercicio 1 — Reserva de Restaurante</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <h1>🍽️ Ejercicio 1 — Reserva de Restaurante</h1>
+  <p class="subtitulo">Elija el menú y el tipo de mesa. Pulse Enviar para ver el resumen.</p>
+
+  <div class="formulario">
+
+    <!-- DATOS PERSONALES -->
+    <div class="bloque-titulo">👤 0. Datos personales</div>
+
+    <div class="campo">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" placeholder="Ej: María López García"/>
+    </div>
+
+    <div class="campo">
+      <label for="dni">DNI</label>
+      <input type="text" id="dni" placeholder="Ej: 12345678A"/>
+    </div>
+
+    <div class="dos-columnas">
+      <div class="campo">
+        <label for="fecha-inicio">Fecha de inicio</label>
+        <input type="date" id="fecha-inicio"/>
+      </div>
+      <div class="campo">
+        <label for="fecha-fin">Fecha de fin</label>
+        <input type="date" id="fecha-fin"/>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- SELECT: tipo de menú -->
+    <div class="bloque-titulo">🍴 1. Tipo de menú</div>
+
+    <div class="campo">
+      <label for="sel-menu">¿Qué menú desea?</label>
+      <select id="sel-menu">
+        <option value="">-- Seleccione un menú --</option>
+        <option value="degustacion">🌟 Menú degustación</option>
+        <option value="diario">🥗 Menú del día</option>
+        <option value="infantil">🧒 Menú infantil</option>
+      </select>
+    </div>
+
+    <div class="panel panel-morado" id="panel-degustacion">
+      🌟 <strong>Menú degustación</strong> — 7 platos + maridaje de vinos · 65 € / persona.
+      <div class="campo-panel">
+        <label for="alergias-deg">¿Tiene alguna alergia alimentaria?</label>
+        <input type="text" id="alergias-deg" placeholder="Ej: Intolerancia al gluten"/>
+      </div>
+    </div>
+
+    <div class="panel panel-verde" id="panel-diario">
+      🥗 <strong>Menú del día</strong> — Primero + segundo + postre + bebida · 14 € / persona.
+      <div class="campo-panel">
+        <label for="alergias-dia">¿Tiene alguna alergia alimentaria?</label>
+        <input type="text" id="alergias-dia" placeholder="Ej: Sin lácteos"/>
+      </div>
+    </div>
+
+    <div class="panel panel-naranja" id="panel-infantil">
+      🧒 <strong>Menú infantil</strong> — Plato + postre + refresco · 9 € / niño.
+      <div class="campo-panel">
+        <label for="edad-nino">Edad del niño</label>
+        <input type="text" id="edad-nino" placeholder="Ej: 8 años"/>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- RADIO: tipo de mesa -->
+    <div class="bloque-titulo">🪑 2. Tipo de mesa</div>
+
+    <div class="opcion-fila">
+      <input type="radio" id="r-interior" name="mesa" value="interior"/>
+      <label for="r-interior">🏠 Interior (aire acondicionado)</label>
+    </div>
+    <div class="opcion-fila">
+      <input type="radio" id="r-terraza" name="mesa" value="terraza"/>
+      <label for="r-terraza">🌿 Terraza exterior</label>
+    </div>
+    <div class="opcion-fila">
+      <input type="radio" id="r-privado" name="mesa" value="privado"/>
+      <label for="r-privado">🔒 Reservado privado</label>
+    </div>
+
+    <div class="panel panel-azul" id="panel-interior">
+      🏠 <strong>Mesa interior</strong> — Ambiente tranquilo y climatizado.
+      <div class="campo-panel">
+        <label for="comensales-int">Número de comensales</label>
+        <input type="text" id="comensales-int" placeholder="Ej: 4"/>
+      </div>
+    </div>
+
+    <div class="panel panel-verde" id="panel-terraza">
+      🌿 <strong>Terraza</strong> — Al aire libre. Disponible de abril a octubre.
+      <div class="campo-panel">
+        <label for="comensales-ter">Número de comensales</label>
+        <input type="text" id="comensales-ter" placeholder="Ej: 2"/>
+      </div>
+    </div>
+
+    <div class="panel panel-rojo" id="panel-privado">
+      🔒 <strong>Reservado privado</strong> — Mínimo 10 personas · Decoración personalizada.
+      <div class="campo-panel">
+        <label for="ocasion">Motivo de la celebración</label>
+        <input type="text" id="ocasion" placeholder="Ej: Cumpleaños, aniversario..."/>
+      </div>
+    </div>
+
+    <hr/>
+    <button class="btn-enviar" onclick="enviarFormulario()">✅ Confirmar reserva</button>
+    <div class="aviso-error" id="aviso-error"></div>
+
+  </div>
+
+  <div class="resultado" id="resultado">
+    <h2>🧾 Resumen de su reserva</h2>
+    <div class="res-fila">
+      <span class="res-etiqueta">Nombre:</span>
+      <span class="res-valor" id="res-nombre"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">DNI:</span>
+      <span class="res-valor" id="res-dni"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Fecha de inicio:</span>
+      <span class="res-valor" id="res-fecha-inicio"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Fecha de fin:</span>
+      <span class="res-valor" id="res-fecha-fin"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Menú elegido:</span>
+      <span class="res-valor" id="res-menu"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Detalle menú:</span>
+      <span class="res-valor" id="res-detalle-menu"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Tipo de mesa:</span>
+      <span class="res-valor" id="res-mesa"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Detalle mesa:</span>
+      <span class="res-valor" id="res-detalle-mesa"></span>
+    </div>
+  </div>
+
+  <script>
+
+
+
+  </script>
+</body>
+</html>

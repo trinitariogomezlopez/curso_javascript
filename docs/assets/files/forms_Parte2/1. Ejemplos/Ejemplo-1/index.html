@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio — Eventos de Formulario</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <h1>⚡ Ejercicio — Eventos de Formulario</h1>
+    <p class="subtitulo">Cada elemento dispara un evento que muestra u oculta contenido en la página</p>
+
+
+    <!-- ══════════════════════════════════════════════════════════════════════════════════════════════
+                                    EJEMPLO 1 — SELECT con evento "change"
+    ═══════════════════════════════════════════════════════════════════════════════════════════════════ -->
+    <div class="tarjeta">
+
+        <h2>📌 Ejercicio 1 — Select con evento <code>onchange</code></h2>
+
+        <div class="explicacion">
+            Cuando el usuario elige un idioma en la lista, se dispara el evento <strong>onchange</strong>.
+            La función muestra el panel del idioma elegido y oculta los demás.
+        </div>
+
+        <div class="codigo-evento">elemento.onchange = function() { ... }</div>
+
+        <div class="campo">
+            <label for="sel-idioma">Elige un idioma:</label>
+            <select id="sel-idioma">
+                <option value="">-- Selecciona un idioma --</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 Inglés</option>
+                <option value="fr">🇫🇷 Francés</option>
+            </select>
+        </div>
+
+        <!-- ═══════ Panel Español — oculto por defecto ════════ -->
+        <!-- ═══════════════════════════════════════════════════ -->
+        <div class="panel panel-rojo" id="panel-es">
+            🇪🇸 <strong>¡Hola!</strong> Has elegido <strong>Español</strong>.<br>
+            El español es hablado por más de 580 millones de personas en el mundo.
+        </div>
+
+        <!-- ═══════ Panel Inglés — oculto por defecto ════════ -->
+        <!-- ═══════════════════════════════════════════════════ -->
+        <div class="panel panel-azul" id="panel-en">
+            🇬🇧 <strong>Hello!</strong> You chose <strong>English</strong>.<br>
+            English is the most widely spoken language in the world.
+        </div>
+
+        <!-- ═══════ Panel Francés — oculto por defecto ════════ -->
+        <!-- ═══════════════════════════════════════════════════ -->
+        <div class="panel panel-morado" id="panel-fr">
+            🇫🇷 <strong>Bonjour!</strong> Tu as choisi le <strong>Français</strong>.<br>
+            Le français est parlé par plus de 300 millions de personnes.
+        </div>
+
+    </div>
+
+
+
+     <!-- ══════════════════════════════════════════════════════════════════════════════════════════════
+                                    EJEMPLO 2 — RADIO con evento "change"
+    ═══════════════════════════════════════════════════════════════════════════════════════════════════ -->
+    <div class="tarjeta">
+
+        <h2>📌 Ejercicio 2 — Radio con evento <code>onchange</code></h2>
+
+        <div class="explicacion">
+            Cuando el usuario selecciona una forma de pago, el evento <strong>onchange</strong> del radio
+            muestra el panel con las instrucciones de esa forma de pago y oculta los demás.
+        </div>
+
+        <div class="codigo-evento">elemento.onchange = function() { ... }</div>
+
+        <label>Elige la forma de pago:</label>
+
+        <div class="opcion-fila">
+            <input type="radio" class="pago" id="r-tarjeta" name="pago" value="tarjeta" />
+            <label for="r-tarjeta">💳 Tarjeta bancaria</label>
+        </div>
+        <div class="opcion-fila">
+            <input type="radio" class="pago" id="r-transferencia" name="pago" value="transferencia" />
+            <label for="r-transferencia">🏦 Transferencia bancaria</label>
+        </div>
+        <div class="opcion-fila">
+            <input type="radio" class="pago" id="r-efectivo" name="pago" value="efectivo" />
+            <label for="r-efectivo">💵 Efectivo en tienda</label>
+        </div>
+
+        <!-- ═══════ Panel FORMA PAGO TARJETA — Oculto por defecto ════════ -->
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <div class="panel panel-azul" id="panel-tarjeta">
+            💳 <strong>Tarjeta bancaria:</strong> Introduce los datos de tu tarjeta.
+
+            <div class="campo-pago">
+                <label for="num-tarjeta">Número de tarjeta (16 dígitos)</label>
+                <input type="text" id="num-tarjeta" placeholder="1234 5678 9012 3456" maxlength="19" />
+            </div>
+
+            <div class="campo-pago">
+                <label for="caducidad">Fecha de caducidad (MM/AA)</label>
+                <input type="text" id="caducidad" placeholder="12/27" maxlength="5" />
+            </div>
+
+            <div class="campo-pago">
+                <label for="cvv">CVV (3 dígitos del reverso)</label>
+                <input type="text" id="cvv" placeholder="123" maxlength="3" />
+            </div>
+        </div>
+
+
+        <!-- ═══════ Panel FORMA PAGO TRANSFERENCIA — Oculto por defecto ════════ -->
+        <!-- ════════════════════════════════════════════════════════════════════ -->
+        <div class="panel panel-verde" id="panel-transferencia">
+            🏦 <strong>Transferencia bancaria:</strong> Introduce tu número de cuenta para confirmar el pago.
+
+            <div class="campo-pago">
+                <label for="num-cuenta">Número de cuenta (IBAN)</label>
+                <input type="text" id="num-cuenta" placeholder="ES12 3456 7890 1234 5678 9012" maxlength="29" />
+            </div>
+
+            <div class="campo-pago">
+                <label for="titular">Titular de la cuenta</label>
+                <input type="text" id="titular" placeholder="Nombre y apellidos" />
+            </div>
+        </div>
+
+        <!-- ═══════ Panel FORMA PAGO EFECTIVO — Oculto por defecto ════════ -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <div class="panel panel-naranja" id="panel-efectivo">
+            💵 <strong>Efectivo:</strong> Pasa por nuestra tienda en horario de 9:00 a 20:00 y muestra el número de
+            pedido.
+        </div>
+
+    </div>
+
+
+  
+    <!-- ══════════════════════════════════════════════════════════════════════════════════════════════
+                                    EJEMPLO 3 — CHECKBOX con evento "change"
+    ═══════════════════════════════════════════════════════════════════════════════════════════════════ -->
+    <div class="tarjeta">
+
+        <h2>📌 Ejercicio 3 — Checkbox con evento <code>onchange</code></h2>
+
+        <div class="explicacion">
+            Cada checkbox activa o desactiva su panel correspondiente.
+            Si el checkbox está <strong>marcado</strong> → se muestra el panel.
+            Si está <strong>desmarcado</strong> → se oculta.
+        </div>
+
+        <div class="codigo-evento">elemento.onchange = function() { if (this.checked) { ... } }</div>
+
+        <label>Elige los extras que quieres añadir a tu pedido:</label>
+
+        <div class="opcion-fila">
+            <input type="checkbox" id="ch-envio" value="envio" />
+            <label for="ch-envio">🚀 Envío express (+ 5 €)</label>
+        </div>
+        <div class="opcion-fila">
+            <input type="checkbox" id="ch-regalo" value="regalo" />
+            <label for="ch-regalo">🎁 Envolver para regalo (+ 2 €)</label>
+        </div>
+        <div class="opcion-fila">
+            <input type="checkbox" id="ch-seguro" value="seguro" />
+            <label for="ch-seguro">🛡️ Seguro de devolución (+ 3 €)</label>
+        </div>
+
+        <!-- ═══════ Panel ENVÍO EXPRESS — Oculto por defecto ══════════════ -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <div class="panel panel-azul" id="panel-envio">
+            🚀 <strong>Envío express activado.</strong> Tu pedido llegará en menos de 24 horas.
+        </div>
+
+        <!-- ═══════ Panel ENVOLTORIO REGALO — Oculto por defecto ══════════════ -->
+        <!-- ═══════════════════════════════════════════════════════════════════ -->
+        <div class="panel panel-morado" id="panel-regalo">
+            🎁 <strong>Envoltorio de regalo activado.</strong> Incluye lazo y tarjeta personalizada.
+        </div>
+
+        <!-- ═══════ Panel SEGURO — Oculto por defecto ═════════════════════════ -->
+        <!-- ═══════════════════════════════════════════════════════════════════ -->
+        <div class="panel panel-verde" id="panel-seguro">
+            🛡️ <strong>Seguro de devolución activado.</strong> Puedes devolver el producto en 30 días sin coste.
+        </div>
+
+    </div>
+</body>
+
+</html>

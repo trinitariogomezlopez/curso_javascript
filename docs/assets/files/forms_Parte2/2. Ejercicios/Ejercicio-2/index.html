@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Ejercicio 2 — Alquiler de Coche</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <h1>🚗 Ejercicio 2 — Alquiler de Coche</h1>
+  <p class="subtitulo">Elija el tipo de coche y la modalidad de seguro. Pulse Enviar para ver el resumen.</p>
+
+  <div class="formulario">
+
+    <!-- DATOS PERSONALES -->
+    <div class="bloque-titulo">👤 0. Datos personales</div>
+
+    <div class="campo">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" placeholder="Ej: Carlos Martínez Ruiz"/>
+    </div>
+
+    <div class="campo">
+      <label for="dni">DNI</label>
+      <input type="text" id="dni" placeholder="Ej: 12345678A"/>
+    </div>
+
+    <div class="dos-columnas">
+      <div class="campo">
+        <label for="fecha-inicio">Fecha de recogida</label>
+        <input type="date" id="fecha-inicio"/>
+      </div>
+      <div class="campo">
+        <label for="fecha-fin">Fecha de devolución</label>
+        <input type="date" id="fecha-fin"/>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- SELECT: tipo de coche -->
+    <div class="bloque-titulo">🚗 1. Tipo de coche</div>
+
+    <div class="campo">
+      <label for="sel-coche">¿Qué tipo de coche desea?</label>
+      <select id="sel-coche">
+        <option value="">-- Seleccione un tipo --</option>
+        <option value="utilitario">🚙 Utilitario (hasta 5 plazas)</option>
+        <option value="suv">🛻 SUV (hasta 7 plazas)</option>
+        <option value="electrico">⚡ Eléctrico</option>
+      </select>
+    </div>
+
+    <div class="panel panel-azul" id="panel-utilitario">
+      🚙 <strong>Utilitario</strong> — Económico y fácil de aparcar · Desde 35 € / día.
+      <div class="campo-panel">
+        <label for="modelo-util">Modelo preferido (opcional)</label>
+        <input type="text" id="modelo-util" placeholder="Ej: Seat Ibiza, VW Polo..."/>
+      </div>
+    </div>
+
+    <div class="panel panel-naranja" id="panel-suv">
+      🛻 <strong>SUV</strong> — Ideal para familias y viajes largos · Desde 65 € / día.
+      <div class="campo-panel">
+        <label for="num-plazas">Número de plazas necesarias</label>
+        <input type="text" id="num-plazas" placeholder="Ej: 5"/>
+      </div>
+    </div>
+
+    <div class="panel panel-verde" id="panel-electrico">
+      ⚡ <strong>Eléctrico</strong> — 0 emisiones · Autonomía 400 km · Desde 55 € / día.
+      <div class="campo-panel">
+        <label for="autonomia">¿Cuántos km va a recorrer al día?</label>
+        <input type="text" id="autonomia" placeholder="Ej: 150 km"/>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- RADIO: modalidad de seguro -->
+    <div class="bloque-titulo">🛡️ 2. Modalidad de seguro</div>
+
+    <div class="opcion-fila">
+      <input type="radio" id="r-basico"   name="seguro" value="basico"/>
+      <label for="r-basico">🔵 Seguro básico (franquicia 800 €)</label>
+    </div>
+    <div class="opcion-fila">
+      <input type="radio" id="r-completo" name="seguro" value="completo"/>
+      <label for="r-completo">🟢 Seguro completo sin franquicia</label>
+    </div>
+    <div class="opcion-fila">
+      <input type="radio" id="r-premium"  name="seguro" value="premium"/>
+      <label for="r-premium">⭐ Seguro premium (incluye asistencia y conductor)</label>
+    </div>
+
+    <div class="panel panel-azul" id="panel-basico">
+      🔵 <strong>Seguro básico</strong> — Cubre daños a terceros. Franquicia de 800 € en caso de accidente.
+      <div class="campo-panel">
+        <label for="carnet-basico">Años de antigüedad del carnet de conducir</label>
+        <input type="text" id="carnet-basico" placeholder="Ej: 10 años"/>
+      </div>
+    </div>
+
+    <div class="panel panel-verde" id="panel-completo">
+      🟢 <strong>Seguro completo</strong> — Sin franquicia. Cubre todos los daños al vehículo. + 18 € / día.
+      <div class="campo-panel">
+        <label for="carnet-completo">Años de antigüedad del carnet de conducir</label>
+        <input type="text" id="carnet-completo" placeholder="Ej: 5 años"/>
+      </div>
+    </div>
+
+    <div class="panel panel-morado" id="panel-premium">
+      ⭐ <strong>Seguro premium</strong> — Todo incluido + conductor adicional + asistencia en carretera 24h. + 30 € / día.
+      <div class="campo-panel">
+        <label for="conductor-extra">Nombre del conductor adicional (si lo hay)</label>
+        <input type="text" id="conductor-extra" placeholder="Ej: Juan García"/>
+      </div>
+    </div>
+
+    <hr/>
+    <button class="btn-enviar" onclick="enviarFormulario()">✅ Confirmar alquiler</button>
+    <div class="aviso-error" id="aviso-error"></div>
+
+  </div>
+
+  <div class="resultado" id="resultado">
+    <h2>🧾 Resumen del alquiler</h2>
+    <div class="res-fila">
+      <span class="res-etiqueta">Nombre:</span>
+      <span class="res-valor" id="res-nombre"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">DNI:</span>
+      <span class="res-valor" id="res-dni"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Fecha de recogida:</span>
+      <span class="res-valor" id="res-fecha-inicio"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Fecha de devolución:</span>
+      <span class="res-valor" id="res-fecha-fin"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Tipo de coche:</span>
+      <span class="res-valor" id="res-coche"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Detalle coche:</span>
+      <span class="res-valor" id="res-detalle-coche"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Seguro elegido:</span>
+      <span class="res-valor" id="res-seguro"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Detalle seguro:</span>
+      <span class="res-valor" id="res-detalle-seguro"></span>
+    </div>
+  </div>
+</body>
+</html>

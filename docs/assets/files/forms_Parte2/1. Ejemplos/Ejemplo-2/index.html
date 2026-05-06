@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejercicio — Reserva de Viaje</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <h1>✈️ Reserva de Viaje</h1>
+  <p class="subtitulo">Seleccione las opciones y pulse Enviar para ver el resumen</p>
+
+  <div class="formulario">
+
+    <!-- ══════════════════════════════════════════════════════════════════════════════════════════════
+                                    BLOQUE 1 — SELECT Destino del viaje
+    ═══════════════════════════════════════════════════════════════════════════════════════════════════ -->
+    <div class="bloque-titulo">🌍 1. Destino del viaje</div>
+
+    <div class="campo">
+      <label for="sel-destino">¿A dónde quiere viajar?</label>
+      <select id="sel-destino">
+        <option value="">-- Seleccione un destino --</option>
+        <option value="paris">🇫🇷 París, Francia</option>
+        <option value="roma">🇮🇹 Roma, Italia</option>
+        <option value="cancun">🇲🇽 Cancún, México</option>
+      </select>
+    </div>
+
+    <!-- ═══════ Panel PARÍS — oculto por defecto ══════════ -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="panel panel-azul" id="panel-paris">
+      🗼 <strong>París</strong> — Vuelo directo de 2h · Mejor época: primavera y otoño.<br>
+      <div class="campo-panel">
+        <label for="hotel-paris">Nombre del hotel en París</label>
+        <input type="text" id="hotel-paris" placeholder="Ej: Hotel Le Marais" />
+      </div>
+    </div>
+
+    <!-- ═══════ Panel ROMA — oculto por defecto ══════════ -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="panel panel-verde" id="panel-roma">
+      🏛️ <strong>Roma</strong> — Vuelo directo de 2h 30min · Mejor época: primavera.<br>
+      <div class="campo-panel">
+        <label for="hotel-roma">Nombre del hotel en Roma</label>
+        <input type="text" id="hotel-roma" placeholder="Ej: Hotel Colosseo" />
+      </div>
+    </div>
+
+    <!-- ═══════ Panel CANCÚN — oculto por defecto ══════════ -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="panel panel-naranja" id="panel-cancun">
+      🌴 <strong>Cancún</strong> — Vuelo con escala de 12h · Mejor época: noviembre a abril.<br>
+      <div class="campo-panel">
+        <label for="hotel-cancun">Nombre del hotel en Cancún</label>
+        <input type="text" id="hotel-cancun" placeholder="Ej: Hotel Caribe" />
+      </div>
+    </div>
+
+    <hr />
+
+
+    <!-- ══════════════════════════════════════════════════════════════════════════════════════════════
+                                    BLOQUE 2 — RADIO Tipo de alojamiento
+    ═══════════════════════════════════════════════════════════════════════════════════════════════════ -->
+    <div class="bloque-titulo">🏨 2. Tipo de alojamiento</div>
+
+    <div class="opcion-fila">
+      <input type="radio" id="r-hotel" class="alojamiento" name="alojamiento" value="hotel" />
+      <label for="r-hotel">🏨 Hotel</label>
+    </div>
+    <div class="opcion-fila">
+      <input type="radio" id="r-apartamento" class="alojamiento" name="alojamiento" value="apartamento" />
+      <label for="r-apartamento">🏠 Apartamento</label>
+    </div>
+    <div class="opcion-fila">
+      <input type="radio" id="r-camping" class="alojamiento" name="alojamiento" value="camping" />
+      <label for="r-camping">⛺ Camping</label>
+    </div>
+
+    <!-- ═══════ Panel Hotel — oculto por defecto ══════════ -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="panel panel-azul" id="panel-hotel">
+      🏨 <strong>Hotel:</strong> Indique el número de habitaciones que necesita.
+      <div class="campo-panel">
+        <label for="num-habitaciones">Número de habitaciones</label>
+        <input type="text" id="num-habitaciones" placeholder="Ej: 2" />
+      </div>
+    </div>
+
+
+    <!-- ═══════ Panel Apartamento — oculto por defecto ══════════ -->
+    <!-- ═════════════════════════════════════════════════════════ -->
+    <div class="panel panel-morado" id="panel-apartamento">
+      🏠 <strong>Apartamento:</strong> Indique el número de dormitorios del apartamento.
+      <div class="campo-panel">
+        <label for="num-dormitorios">Número de dormitorios</label>
+        <input type="text" id="num-dormitorios" placeholder="Ej: 3" />
+      </div>
+    </div>
+
+    <!-- ═══════ Panel Camping — oculto por defecto ══════════════ -->
+    <!-- ═════════════════════════════════════════════════════════ -->
+    <div class="panel panel-verde" id="panel-camping">
+      ⛺ <strong>Camping:</strong> Indique si necesita parcela para tienda o para autocaravana.
+      <div class="campo-panel">
+        <label for="tipo-parcela">Tipo de parcela</label>
+        <input type="text" id="tipo-parcela" placeholder="Ej: Tienda de campaña" />
+      </div>
+    </div>
+
+    <hr />
+
+
+    <!-- BOTÓN ENVIAR -->
+    <hr />
+    <button class="btn-enviar" id="enviarFormulario">
+      ✅ Enviar reserva
+    </button>
+
+  </div>
+
+
+  <!-- ══════════════════════
+       CAJA DE RESULTADO
+  ══════════════════════ -->
+  <div class="resultado" id="resultado">
+    <h2>🧾 Resumen de su reserva</h2>
+
+    <div class="res-fila">
+      <span class="res-etiqueta">Destino:</span>
+      <span class="res-valor" id="res-destino"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Hotel en destino:</span>
+      <span class="res-valor" id="res-hotel-destino"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Alojamiento:</span>
+      <span class="res-valor" id="res-alojamiento"></span>
+    </div>
+    <div class="res-fila">
+      <span class="res-etiqueta">Detalle alojamiento:</span>
+      <span class="res-valor" id="res-detalle-aloj"></span>
+    </div>
+  </div>
+
+</body>
+
+</html>
