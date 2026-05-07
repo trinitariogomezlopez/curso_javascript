@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atelier · Eliminar mueble</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="eliminar.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><p class="brand-eye">Tienda de muebles</p><h2>Atelier</h2></div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="crear.html"><span class="nav-dot"></span><span class="nav-label">Nuevo mueble</span></a>
+      <a class="nav-item" href="consultar.html"><span class="nav-dot"></span><span class="nav-label">Consultar</span></a>
+      <a class="nav-item" href="modificar.html"><span class="nav-dot"></span><span class="nav-label">Modificar</span></a>
+      <a class="nav-item active" href="eliminar.html"><span class="nav-dot"></span><span class="nav-label">Eliminar</span></a>
+      <a class="nav-item" href="todas.html"><span class="nav-dot"></span><span class="nav-label">Todas los muebles</span></a>
+    </nav>
+    <div class="sidebar-footer"><p>Stock · v1.0</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <p class="eyebrow">Tienda de muebles · Stock</p>
+      <h1>Eliminar mueble</h1>
+    </div>
+    <p class="status-bar" id="status">Introduce el ID del mueble a eliminar.</p>
+
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">Referencia</p>
+        <div class="field"><label>ID del mueble</label><input type="number" id="id-input" min="1" placeholder="Ej: 1"/></div>
+        <div class="btn-row"><button class="btn btn-primary" id="fetch-btn">Buscar mueble</button></div>
+      </div>
+
+      <div class="card" id="result">
+        <div id="data-area">
+          <p class="prenda-title" id="r-plato">—</p>
+          <p class="prenda-ref">
+            Ref. <span id="r-id"> — </span>
+          </p>
+          <div class="data-row"><span class="d-label">Mueble</span><span class="d-value" id="r-mueble">—</span></div>
+          <div class="data-row"><span class="d-label">Precio</span><span class="d-value" id="r-precio">—</span></div>
+          <div class="data-row"><span class="d-label">Medidas</span><span class="d-value" id="r-medidas">—</span></div>
+          <div class="data-row"><span class="d-label">Unidades</span><span class="d-value" id="r-unidades">—</span></div>
+          <div class="data-row"><span class="d-label">Total</span><span class="d-value big" id="r-total">—</span></div>
+          <div class="btn-row"><button class="btn btn-danger" id="delete-btn">Eliminar mueble</button></div>
+        </div>
+        <div class="confirm-banner" id="confirm">
+          <p>¿Seguro que quieres eliminar <strong id="confirm-name">—</strong>? Esta acción no se puede deshacer.</p>
+          <div class="btn-row">
+            <button class="btn btn-danger" id="confirm-btn">Sí, eliminar</button>
+            <button class="btn btn-ghost"  id="cancel-btn">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="deleted-state" id="deleted">
+      <p class="state-title">Prenda eliminada</p>
+      <p class="state-sub">Registro retirado del stock</p>
+      <button class="btn-again" id="again-btn">Eliminar otra prenda</button>
+    </div>
+  </main>
+
+</body>
+</html>

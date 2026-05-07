@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atelier · Gestión de Stock</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <p class="brand-eye">Tienda de muebles</p>
+      <h2>Atelier</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="crear.html"><span class="nav-dot"></span><span class="nav-label">Nuevo mueblo</span></a>
+      <a class="nav-item" href="consultar.html"><span class="nav-dot"></span><span class="nav-label">Consultar</span></a>
+      <a class="nav-item" href="modificar.html"><span class="nav-dot"></span><span class="nav-label">Modificar</span></a>
+      <a class="nav-item" href="eliminar.html"><span class="nav-dot"></span><span class="nav-label">Eliminar</span></a>
+      <a class="nav-item" href="todas.html"><span class="nav-dot"></span><span class="nav-label">Todas los muebles</span></a>
+    </nav>
+    <div class="sidebar-footer"><p>Stock · v1.0</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <p class="eyebrow">Tienda de muebles · Sistema de gestión</p>
+      <h1>Bienvenido</h1>
+    </div>
+
+    <div class="welcome">
+      <p class="welcome-sub">Gestiona el inventario de muebles desde aquí. Selecciona una opción del menú o usa los accesos directos.</p>
+
+      <div class="menu-grid">
+        <a class="menu-card" href="crear.html">
+          <span class="mc-label">POST</span>
+          <span class="mc-title">Nuevo mueble</span>
+          <span class="mc-desc">Añade un nuevo artículo al inventario.</span>
+          <span class="mc-arrow">→</span>
+        </a>
+        <a class="menu-card" href="consultar.html">
+          <span class="mc-label">GET /{id}</span>
+          <span class="mc-title">Consultar</span>
+          <span class="mc-desc">Busca un mueble por su ID y consulta todos sus datos.</span>
+          <span class="mc-arrow">→</span>
+        </a>
+        <a class="menu-card" href="modificar.html">
+          <span class="mc-label">PUT /{id}</span>
+          <span class="mc-title">Modificar</span>
+          <span class="mc-desc">Carga un mueble existente, edita sus datos y guarda los cambios.</span>
+          <span class="mc-arrow">→</span>
+        </a>
+        <a class="menu-card" href="eliminar.html">
+          <span class="mc-label">DELETE /{id}</span>
+          <span class="mc-title">Eliminar</span>
+          <span class="mc-desc">Retira definitivamente un mueble del stock por su ID.</span>
+          <span class="mc-arrow">→</span>
+        </a>
+        <a class="menu-card" href="todas.html">
+          <span class="mc-label">GET</span>
+          <span class="mc-title">Todos los muebles</span>
+          <span class="mc-desc">Carga el inventario completo y consulta el valor total del stock.</span>
+          <span class="mc-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

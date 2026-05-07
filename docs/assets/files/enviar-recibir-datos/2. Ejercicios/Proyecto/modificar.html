@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atelier · Modificar mueble</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="modificar.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><p class="brand-eye">Tienda de muebles</p><h2>Atelier</h2></div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="crear.html"><span class="nav-dot"></span><span class="nav-label">Nuevo mueble</span></a>
+      <a class="nav-item" href="consultar.html"><span class="nav-dot"></span><span class="nav-label">Consultar</span></a>
+      <a class="nav-item active" href="modificar.html"><span class="nav-dot"></span><span class="nav-label">Modificar</span></a>
+      <a class="nav-item" href="eliminar.html"><span class="nav-dot"></span><span class="nav-label">Eliminar</span></a>
+      <a class="nav-item" href="todas.html"><span class="nav-dot"></span><span class="nav-label">Todos los muebles</span></a>
+    </nav>
+    <div class="sidebar-footer"><p>Stock · v1.0</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <p class="eyebrow">Tienda de muebles · Stock</p>
+      <h1>Modificar mueble</h1>
+    </div>
+    <p class="status-bar" id="status">Introduce el ID del mueble a modificar.</p>
+
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">Referencia</p>
+        <div class="field"><label>ID del mueble</label><input type="number" id="id-input" min="1" placeholder="Ej: 1"/></div>
+        <div class="btn-row"><button class="btn btn-primary" id="fetch-btn">Cargar mueble</button></div>
+      </div>
+
+      <div class="card" id="edit-card">
+        <p class="card-label">Editar datos</p>
+        <div class="field"><label>Mueble</label><input type="text" id="e-mueble" disabled/></div>
+        <div class="row-2">
+          <div class="field"><label>Precio €</label><input type="number" id="e-precio" min="0" step="0.01" disabled/></div>
+          <div class="field"><label>Medidas</label><input type="number" id="e-medidas" min="0" step="0.01" disabled/></div>
+        </div>
+        <div class="field"><label>Unidades</label><input type="number" id="e-unidades" min="1" disabled/></div>
+        <hr/>
+        <div class="total-line">
+          <span class="t-label">Total</span>
+          <span class="t-value" id="e-total">0.00 €</span>
+        </div>
+        <input type="hidden" id="e-total"/>
+        <div class="btn-row" id="btn-row">
+          <button class="btn btn-ghost"   id="cancel-btn">Cancelar</button>
+          <button class="btn btn-primary" id="save-btn">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="success-state" id="success">
+      <p class="state-title">Cambios guardados</p>
+      <p class="state-sub">Prenda actualizada correctamente</p>
+      <button class="btn-again" id="again-btn">Modificar otra prenda</button>
+    </div>
+  </main>
+
+</body>
+</html>

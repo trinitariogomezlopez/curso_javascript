@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eliminar Prenda</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="page-header">
+        <p class="eyebrow">Tienda de ropa · Stock</p>
+        <h1>Eliminar prenda</h1>
+    </div>
+
+    <p id="status">Introduce el ID de la prenda que quieres eliminar.</p>
+
+    <div class="layout">
+
+        <!-- Buscador -->
+        <div class="card">
+            <p class="section-label">Referencia</p>
+            <div class="field">
+                <label for="id-input">ID de la prenda</label>
+                <input type="number" id="id-input" min="1" placeholder="Ej: 1" />
+            </div>
+            <button class="btn btn-primary" id="fetch-btn">Buscar prenda</button>
+        </div>
+
+        <!-- Ficha + confirmación -->
+        <div class="card" id="result">
+
+            <!-- Datos prenda -->
+            <div id="prenda-data">
+                <p class="section-label">Ficha de prenda</p>
+                <p class="prenda-name" id="r-prenda">—</p>
+                <p class="prenda-id" >Ref. 
+                    <span id="r-id">—</span>
+                </p>
+
+                <div class="data-row">
+                    <span class="d-label">Precio base</span>
+                    <span class="d-value" id="r-precio">—</span>
+                </div>
+                <div class="data-row">
+                    <span class="d-label">Personalización</span>
+                    <span class="d-value" id="r-personalizacion">—</span>
+                </div>
+                <div class="data-row">
+                    <span class="d-label">Unidades</span>
+                    <span class="d-value" id="r-unidades">—</span>
+                </div>
+                <div class="data-row">
+                    <span class="d-label">Total</span>
+                    <span class="d-value" id="r-total">—</span>
+                </div>
+
+                <!-- Botón eliminar -->
+                <button class="btn btn-danger" id="delete-btn" style="margin-top:1.5rem">
+                    Eliminar prenda
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

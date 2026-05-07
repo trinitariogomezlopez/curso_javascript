@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle Pedido</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Detalle de <em>pedido</em></h1>
+
+    <div class="input-row">
+        <input type="number" id="id-input" min="1" placeholder="ID del pedido (ej: 1)" />
+        <button id="load-btn">Buscar</button>
+    </div>
+
+    <p id="status">Introduce un ID y pulsa Buscar.</p>
+
+    <div class="card" id="card">
+        <div class="card-header">
+            <span class="plato-name" id="f-plato">—</span>
+            <span class="badge" id="f-id">#—</span>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <span class="label">Precio base</span>
+                <span class="value" id="f-precio">—</span>
+            </div>
+            <div class="row">
+                <span class="label">Extras</span>
+                <span class="value" id="f-extras">—</span>
+            </div>
+            <div class="row">
+                <span class="label">Cantidad</span>
+                <span class="value" id="f-cantidad">—</span>
+            </div>
+            <div class="row total-row">
+                <span class="label">Total</span>
+                <span class="value" id="f-total">—</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

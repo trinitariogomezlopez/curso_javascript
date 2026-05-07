@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editar Pedido</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+  <h1>Editar <span>pedido</span></h1>
+
+  <!-- Step indicator -->
+  <div class="steps">
+    <div class="step active" id="step1">
+      <span class="step-num">1</span>
+      <span>Recuperar</span>
+    </div>
+    <span class="step-sep">──</span>
+    <div class="step" id="step2">
+      <span class="step-num">2</span>
+      <span>Editar</span>
+    </div>
+    <span class="step-sep">──</span>
+    <div class="step" id="step3">
+      <span class="step-num">3</span>
+      <span>Guardar</span>
+    </div>
+  </div>
+
+  <!-- Step 1: buscar por ID -->
+  <div class="panel" id="search-panel">
+    <p class="panel-title">Paso 1 — Buscar registro</p>
+    <div class="field">
+      <label for="id-input">ID del pedido</label>
+      <input type="number" id="id-input" min="1" placeholder="Ej: 1"/>
+    </div>
+    <button class="btn btn-primary" id="fetch-btn">Recuperar pedido</button>
+  </div>
+
+  <p id="status">Introduce un ID para cargar el pedido.</p>
+
+  <!-- Step 2 + 3: editar y guardar -->
+  <div class="panel" id="edit-panel">
+    <p class="panel-title">Paso 2 — Editar campos</p>
+
+    <div class="field">
+      <label for="e-plato">Plato</label>
+      <input type="text" id="e-plato"/>
+    </div>
+
+    <div class="row-2">
+      <div class="field">
+        <label for="e-precio">Precio base (€)</label>
+        <input type="number" id="e-precio" min="0" step="0.01"/>
+      </div>
+      <div class="field">
+        <label for="e-extras">Extras (€)</label>
+        <input type="number" id="e-extras" min="0" step="0.01"/>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="e-cantidad">Cantidad</label>
+      <input type="number" id="e-cantidad" min="1" step="1"/>
+    </div>
+
+    <div class="field">
+      <label for="e-total">Total (€) — calculado</label>
+      <input type="text" id="e-total"/>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-success" id="save-btn">Guardar cambios</button>
+    </div>
+  </div>
+
+</body>
+</html>

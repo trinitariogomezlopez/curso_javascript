@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atelier · Consultar prenda</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="consultar.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><p class="brand-eye">Tienda de ropa</p><h2>Atelier</h2></div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="crear.html"><span class="nav-dot"></span><span class="nav-label">Nueva prenda</span></a>
+      <a class="nav-item active" href="consultar.html"><span class="nav-dot"></span><span class="nav-label">Consultar</span></a>
+      <a class="nav-item" href="modificar.html"><span class="nav-dot"></span><span class="nav-label">Modificar</span></a>
+      <a class="nav-item" href="eliminar.html"><span class="nav-dot"></span><span class="nav-label">Eliminar</span></a>
+      <a class="nav-item" href="todas.html"><span class="nav-dot"></span><span class="nav-label">Todas las prendas</span></a>
+    </nav>
+    <div class="sidebar-footer"><p>Stock · v1.0</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <p class="eyebrow">Tienda de ropa · Stock</p>
+      <h1>Consultar prenda</h1>
+    </div>
+    <p class="status-bar" id="status">Introduce un ID para consultar la prenda.</p>
+
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">Referencia</p>
+        <div class="field"><label>ID de la prenda</label><input type="number" id="id-input" min="1" placeholder="Ej: 1"/></div>
+        <div class="btn-row"><button class="btn btn-primary" id="fetch-btn">Consultar</button></div>
+      </div>
+
+      <div class="card" id="result">
+        <p class="prenda-title" id="r-plato">—</p>
+        <p class="prenda-ref">Ref.
+           <span id="r-ref">—</span>
+        </p>
+        <div class="data-row"><span class="d-label">Precio base</span><span class="d-value" id="r-precio">—</span></div>
+        <div class="data-row"><span class="d-label">Personalización</span><span class="d-value" id="r-extras">—</span></div>
+        <div class="data-row"><span class="d-label">Unidades</span><span class="d-value" id="r-cantidad">—</span></div>
+        <div class="data-row"><span class="d-label">Total</span><span class="d-value big" id="r-total">—</span></div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

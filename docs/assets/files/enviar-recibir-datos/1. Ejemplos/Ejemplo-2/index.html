@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio — Fetch + Tabla</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="title-block">
+            <h1>Comanda <span>/</span> Lista</h1>
+            <p>GET https://...mockapi.io/api/v1/comanda</p>
+        </div>
+        <button id="load-btn">Cargar datos</button>
+    </header>
+
+    <p id="status">Pulsa el botón para recuperar los pedidos.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Plato</th>
+                    <th>Precio base</th>
+                    <th>Extras</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr class="empty-row">
+                    <td colspan="6">Sin datos todavía.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

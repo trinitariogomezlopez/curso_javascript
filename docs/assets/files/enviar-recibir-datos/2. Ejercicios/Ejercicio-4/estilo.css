@@ -1,0 +1,366 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f9f7f5;
+  --card: #ffffff;
+  --border: #e8e2da;
+  --ink: #1c1916;
+  --muted: #b0a89e;
+  --ok: #4a7c5f;
+  --err: #9e3a2a;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Jost", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  gap: 1.2rem;
+  color: var(--ink);
+}
+
+/* ── Page title ── */
+.page-title {
+  text-align: center;
+  animation: fadeUp 0.5s ease both;
+}
+
+.page-title .eyebrow {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.page-title h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1;
+}
+
+/* ── Steps ── */
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: fadeUp 0.5s 0.05s ease both;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+
+.step.active {
+  color: var(--ink);
+}
+
+.step.done {
+  color: var(--ok);
+}
+
+.step-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.step-sep {
+  width: 24px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Card ── */
+.card {
+  background: var(--card);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 2px 40px rgba(28, 25, 22, 0.06);
+  padding: 2.5rem;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+/* ── Section label ── */
+.section-label {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Divider ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* ── Fields ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.field:last-of-type {
+  margin-bottom: 0;
+}
+
+.field label {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.field input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  padding: 0.5rem 0;
+  outline: none;
+  transition: border-color 0.25s;
+  width: 100%;
+  border-radius: 0;
+}
+
+.field input::placeholder {
+  color: #d5cfc8;
+}
+
+.field input:focus {
+  border-bottom-color: var(--ink);
+}
+
+.field input:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* ── Total ── */
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+}
+
+.total-line .t-label {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.total-line .t-value {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+/* ── Buttons ── */
+.btn-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  border: none;
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: #f9f7f5;
+}
+
+.btn-primary:hover {
+  opacity: 0.78;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-full {
+  grid-column: 1 / -1;
+}
+
+/* ── Status ── */
+#status {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-align: center;
+  min-height: 1rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+#status.ok {
+  color: var(--ok);
+}
+
+#status.err {
+  color: var(--err);
+}
+
+/* ── Success state ── */
+.success {
+  display: none;
+  text-align: center;
+  padding: 1rem 0;
+  animation: fadeIn 0.4s ease both;
+}
+
+.success.show {
+  display: block;
+}
+
+.success .s-title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ok);
+  margin-bottom: 0.4rem;
+}
+
+.success .s-sub {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.btn-again {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.6rem;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.btn-again:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid rgba(249, 247, 245, 0.35);
+  border-top-color: #f9f7f5;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

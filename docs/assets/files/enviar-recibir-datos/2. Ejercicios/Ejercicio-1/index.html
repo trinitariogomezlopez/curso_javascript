@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colección · Stock</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Tienda de ropa · Stock</p>
+      <h1>Colección</h1>
+    </div>
+    <button class="btn-load" id="load-btn">Cargar prendas</button>
+  </div>
+
+  <p id="status">Pulsa el botón para cargar el stock.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Prenda</th>
+          <th>Precio base</th>
+          <th>Personalización</th>
+          <th>Unidades</th>
+          <th>Total</th>
+          <th>Ref.</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr class="empty">
+          <td colspan="6">Sin prendas cargadas.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="table-footer" id="footer" style="display:none">
+      <div class="summary-item">
+        <span class="s-label">Prendas</span>
+        <span class="s-value" id="s-count">0</span>
+      </div>
+      <div class="summary-item">
+        <span class="s-label">Unidades totales</span>
+        <span class="s-value" id="s-units">0</span>
+      </div>
+      <div class="summary-item">
+        <span class="s-label">Valor stock</span>
+        <span class="s-value" id="s-total">0.00 €</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

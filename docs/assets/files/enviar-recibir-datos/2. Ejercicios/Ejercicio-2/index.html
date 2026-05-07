@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nueva Prenda</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="ticket">
+        <div class="ticket-inner">
+
+            <div class="ticket-header">
+                <p class="eyebrow">Tienda de ropa · Nuevo artículo</p>
+                <h1>Nueva prenda</h1>
+                <p class="prompt"></p>
+            </div>
+
+            <hr class="dashed" data-label="artículo" />
+
+            <div id="form-area">
+
+                <div class="field">
+                    <label for="plato">Prenda</label>
+                    <input type="text" id="plato" placeholder="Ej: Camiseta oversize" />
+                </div>
+
+                <div class="row-2">
+                    <div class="field">
+                        <label for="precioBase">Precio base €</label>
+                        <input type="number" id="precioBase" min="0" step="0.01" placeholder="0.00" />
+                    </div>
+                    <div class="field">
+                        <label for="extras">Personalización €</label>
+                        <input type="number" id="extras" min="0" step="0.01" placeholder="0.00" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="cantidad">Unidades</label>
+                    <input type="number" id="cantidad" min="1" step="1" placeholder="1" />
+                </div>
+
+                <hr class="dashed" data-label="importe" />
+
+                <div class="total-line">
+                    <span class="t-label">TOTAL</span>
+                    <span class="t-value" id="total-display">0.00 €</span>
+                </div>
+                <input type="hidden" id="total" />
+
+                <hr class="dashed" data-label="acción" />
+
+                <button class="btn" id="send-btn">Registrar artículo</button>
+                <p class="status-line" id="status"></p>
+
+            </div>
+
+            <!-- Success state -->
+            <div class="receipt" id="receipt">
+                <div class="check">Artículo registrado</div>
+                <p class="receipt-title">Prenda añadida al stock</p>
+                <p class="receipt-id" id="receipt-id">ID: —</p>
+                <button class="new-btn" id="new-btn">Añadir otra prenda</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

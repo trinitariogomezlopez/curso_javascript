@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Prenda</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="page-title">
+        <p class="eyebrow">Tienda de ropa · Stock</p>
+        <h1>Editar prenda</h1>
+    </div>
+
+    <!-- Steps -->
+    <div class="steps">
+        <div class="step active" id="step1">
+            <span class="step-dot"></span>Buscar
+        </div>
+        <div class="step-sep"></div>
+        <div class="step" id="step2">
+            <span class="step-dot"></span>Editar
+        </div>
+        <div class="step-sep"></div>
+        <div class="step" id="step3">
+            <span class="step-dot"></span>Guardar
+        </div>
+    </div>
+
+    <p id="status">Introduce el ID de la prenda que quieres modificar.</p>
+
+    <div class="card">
+
+        <!-- Paso 1: buscar -->
+        <div id="step-search">
+            <p class="section-label">Referencia</p>
+            <div class="field">
+                <label for="id-input">ID de la prenda</label>
+                <input type="number" id="id-input" min="1" placeholder="Ej: 1" />
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-primary btn-full" id="fetch-btn">Buscar prenda</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <!-- Paso 2+3: editar -->
+        <div id="step-edit">
+            <p class="section-label">Datos de la prenda</p>
+
+            <div class="field">
+                <label for="e-prenda">Prenda</label>
+                <input type="text" id="e-prenda" />
+            </div>
+
+            <div class="row-2">
+                <div class="field">
+                    <label for="e-precio">Precio base €</label>
+                    <input type="number" id="e-precio" min="0" step="0.01" />
+                </div>
+                <div class="field">
+                    <label for="e-extras">Personalización €</label>
+                    <input type="number" id="e-extras" min="0" step="0.01" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="e-cantidad">Unidades</label>
+                <input type="number" id="e-cantidad" min="1" step="1" />
+            </div>
+
+            <hr />
+
+            <div class="total-line">
+                <span class="t-label">Total</span>
+                <span class="t-value" id="e-total-display">0.00 €</span>
+            </div>
+            <input type="hidden" id="e-total" />
+
+            <div id="form-area">
+                <div class="btn-row">
+                    <button class="btn btn-primary" id="save-btn">Guardar cambios</button>
+                </div>
+            </div>
+
+            <!-- Success -->
+            <div class="success" id="success">
+                <p class="s-title">Guardado</p>
+                <p class="s-sub">Prenda actualizada correctamente</p>
+                <button class="btn-again" id="again-btn">Editar otra prenda</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

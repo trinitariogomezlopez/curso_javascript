@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atelier · Todas los muebles</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="todas.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><p class="brand-eye">Tienda de mueble</p><h2>Atelier</h2></div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="crear.html"><span class="nav-dot"></span><span class="nav-label">Nuevo mueble</span></a>
+      <a class="nav-item" href="consultar.html"><span class="nav-dot"></span><span class="nav-label">Consultar</span></a>
+      <a class="nav-item" href="modificar.html"><span class="nav-dot"></span><span class="nav-label">Modificar</span></a>
+      <a class="nav-item" href="eliminar.html"><span class="nav-dot"></span><span class="nav-label">Eliminar</span></a>
+      <a class="nav-item active" href="todas.html"><span class="nav-dot"></span><span class="nav-label">Todas los muebles</span></a>
+    </nav>
+    <div class="sidebar-footer"><p>Stock · v1.0</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <p class="eyebrow">Tienda de muebles · Stock</p>
+      <h1>Todas los muebles</h1>
+    </div>
+    <p class="status-bar" id="status">Pulsa el botón para cargar el inventario.</p>
+
+    <div class="btn-row" style="margin-bottom:1.5rem; margin-top:0">
+      <button class="btn btn-primary" id="load-btn">Cargar inventario</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Mueble</th><th>Precio</th><th>Medidas</th><th>Unidades</th><th>Total</th><th>Ref.</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr class="empty-row"><td colspan="6">Sin datos cargados.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
