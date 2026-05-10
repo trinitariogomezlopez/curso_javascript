@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Centro de Formación — Contacto</title>
+  <link rel="stylesheet" href="estilo-contacto.css" />
+  <script src="app-contacto.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-texto">
+      <h1>🏫 Centro de Formación</h1>
+      <p>Aprende a tu ritmo, en cualquier momento</p>
+    </div>
+    <div class="header-usuario">
+      👤 Bienvenido, <strong id="nombre-usuario"></strong>
+      <button class="btn-logout" id="btn-cerrar-sesion">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="cursos.html">📚 Cursos</a>
+    <a href="horarios.html">🕐 Horarios</a>
+    <a href="contacto.html" class="activo">✉️ Contacto</a>
+  </nav>
+
+  <main>
+    <div class="seccion">
+      <h2>✉️ Contacto</h2>
+      <p>Rellene el formulario y nos pondremos en contacto con usted.</p>
+
+      <div class="campo-form">
+        <label for="nombre">Su nombre</label>
+        <input type="text" id="nombre" placeholder="Ej: María Pérez"/>
+      </div>
+      <div class="campo-form">
+        <label for="email">Su correo electrónico</label>
+        <input type="text" id="email" placeholder="Ej: maria@correo.com"/>
+      </div>
+      <div class="campo-form">
+        <label for="mensaje">Su mensaje</label>
+        <textarea id="mensaje" placeholder="Escriba aquí su pregunta o comentario..."></textarea>
+      </div>
+
+      <button class="btn-enviar" id="btn-enviar-contacto">Enviar mensaje</button>
+
+      <div class="aviso" id="aviso">
+        ✅ Mensaje enviado correctamente. Le responderemos en breve.
+      </div>
+    </div>
+  </main>
+
+  <footer>📍 Calle del Saber 10 · Tel: 965 000 000 · info@centroformacion.es</footer>
+
+</body>
+</html>

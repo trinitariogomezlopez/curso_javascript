@@ -1,0 +1,20 @@
+// Añadir los siguientes cambios al proyecto de la actividad anterior:
+    // 1. Añadir una página de login. Dicha página pedirá el usuario y contraseña. El usuario y contraseña introducidos por teclado
+    //    se comparará con los usuarios existentes en la base de datos.
+    //    Si el usuario y contraseña introducidos no son correctos se mostrará un error informando al usuario.
+    //    Se debe validar el usuario y contraseña, en caso que no se introduzca el usuario o la contraseña, se debe informar al usuario.
+
+    // 2. Cuando el usuario y contraseña sean correctos, se debe añadir en LocalStorage dos variables:
+    //      a) usuario: que contendrá el nombre del usuario.
+    //      b) sesion: que contendrá el valor 'logueado'.
+    
+    // 3. Si el loguin es correcto, se debe redirigir a la página index.html.
+
+    // 4. Se deben añadir un botón de 'Cerrar Sesión' en cada una de las páginas del proyecto. De forma que si se cierra la sesión se deben 
+    //    borrar las variables 'usuario' y 'sesion' de LocalStorage.
+
+    // 5. Se debe añadir el nombre del usuario logueado en cada una de las páginas del proyecto.
+
+    // 6. Cuando se abra alguna de las páginas del proyecto se debe comprobar primero si el usuario está logueado.
+    //    En caso que el usuario no esté logueado se redirigirá a la pantalla de loguin.
+
